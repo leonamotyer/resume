@@ -28,6 +28,8 @@ const skills: Skill[] = [
   { name: "MAUI Blazor", color: "#512BD4", category: "Frameworks & Tools" },
   { name: "Oracle", color: "#F80000", category: "Frameworks & Tools" },
   { name: "Visual Studio", color: "#5C2D91", category: "Frameworks & Tools" },
+  { name: "Jira", color: "#007ACC", category: "Frameworks & Tools" },
+  { name: "Confluence", color: "#0078D7", category: "Frameworks & Tools" },
   
   // Database Management
   { name: "SQL", color: "#4479A1", category: "Database Management" },
