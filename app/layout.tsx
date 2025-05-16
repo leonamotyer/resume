@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     'og:url': 'https://motyer.ca',
     'og:site_name': 'Leona Motyer',
     'og:image': 'https://motyer.ca/bikeplane.jpg',
+    'author': 'Leona Motyer',
   },
 };
 
