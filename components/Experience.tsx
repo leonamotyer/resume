@@ -18,10 +18,9 @@ const experiences: ExperienceItem[] = [
     "Designed and deployed tailored dashboards and monitoring solutions to meet specific company needs.",
     "Streamlined AWS billing configuration across all accounts using Terraform, enhancing cost control and scalability.",
     "Enhanced device security for new hires by configuring and encrypting MacBook hard drives with Jamf, and managing their distribution.",
-    "Contributed technical expertise to support a successful data center migration initiative.",
     "Assisted with Siem configuration",
     "Assisted team in data migration into AWS",
-    "Configured Snyk report metrics to be sent to google excel on weekly basis with graphs to show trends"
+    "Configured Snyk report metrics to be sent to google excel with an API call on weekly basis with graphs to show trends"
     ]
   },
   // Add more experiences here
