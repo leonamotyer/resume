@@ -3,7 +3,7 @@
     {
       "title": "YYC Food Trucks - Employee & Event Management System",
       "description": "Developed a comprehensive full-stack capstone project for food truck operations management. Implemented features including employee scheduling, event coordination, shift tracking, and real-time availability monitoring. Built with modern web technologies and a focus on scalability and user experience.",
-      "technologies": ["TypeScript", "Next.js", "React", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      "technologies": ["TypeScript", "Next.js", "React", "Tailwind CSS", "PostgreSQL"],
       "githubUrl": "https://github.com/leonamotyer/capstoneGOATS",
       "image": "/yycfoodtrucks.png"
     },

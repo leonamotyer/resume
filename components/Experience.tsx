@@ -48,6 +48,14 @@ const Experience: React.FC = () => {
               className="mt-4 relative w-full max-w-lg mx-auto rounded-md overflow-hidden shadow-lg perspective-1000"
             >
               <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-black/80 to-transparent z-10"
+              >
+                <p className="text-sm text-amber-500 font-semibold">Log Ingestion Dashboard - Cost Optimization Results</p>
+              </motion.div>
+              <motion.div
                 initial={{ scale: 0.95 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
@@ -61,14 +69,6 @@ const Experience: React.FC = () => {
                   className="w-full h-auto object-cover"
                   priority
                 />
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
-                  className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent"
-                >
-                  <p className="text-sm text-amber-500 font-semibold">Log Ingestion Dashboard - Cost Optimization Results</p>
-                </motion.div>
               </motion.div>
             </motion.div>
           )}
