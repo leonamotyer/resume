@@ -93,7 +93,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://github.com/yourusername"
+              href="https://github.com/leonamotyer"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl hover:text-amber-500 transition-colors"
@@ -103,7 +103,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/leona-motyer/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl hover:text-amber-500 transition-colors"
@@ -113,7 +113,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:your.email@example.com"
+              href="mailto:rlmotyer@gmail.com"
               className="text-2xl hover:text-amber-500 transition-colors"
             >
               <FaEnvelope />
