@@ -12,6 +12,7 @@ declare global {
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://motyer.ca'),
   title: 'Leona Motyer - Portfolio',
   description: 'Platform Engineer, Software Developer Portfolio',
   openGraph: {

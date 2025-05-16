@@ -9,6 +9,7 @@ import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Education from '../components/Education';
+import Recommendations from '../components/Recommendations';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -224,6 +225,9 @@ export default function Home() {
         </motion.h2>
         <Projects />
       </section>
+
+      {/* Recommendations Section */}
+      <Recommendations />
 
       {/* Contact Section */}
       <section className="py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
