@@ -13,28 +13,28 @@ const recommendations = [
   {
     name: 'Hani Mohammed',
     title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.jpg',
+    avatar: '/sait.png',
     linkedin: 'https://www.linkedin.com/in/hani-mohammed-ph-d-4ba34a6a/',
     text: 'Leona demonstrated exceptional problem-solving abilities in my class. She is dedicated, resourceful, and always eager to help her peers succeed.'
   },
   {
     name: 'Camilo Romero',
     title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.jpg',
+    avatar: '/sait.png',
     linkedin: 'https://www.linkedin.com/in/rickdeoliveira/',
     text: 'Leona consistently impressed me with her creativity and leadership. She has a knack for turning complex challenges into opportunities for growth.'
   },
   {
     name: 'Mamta Verma',
     title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.jpg',
+    avatar: '/sait.png',
     linkedin: 'https://www.linkedin.com/in/mamta-verma-28a368115/',
     text: 'Leona is a true asset to any team. Her attention to detail, positive attitude, and strong work ethic set her apart from her peers.'
   },
  // {
  //   name: 'Mehdi Shokrani',
  //   title: 'Professor, Southern Alberta Institute of Technology',
- //    avatar: '/sait.jpg',
+ //    avatar: '/sait.png',
  //   linkedin: 'https://www.linkedin.com/in/mamta-verma-28a368115/',
  //   text: 'Leona consistently delivers high-quality work and is a great collaborator. She is a true asset to any team.'
  // },
