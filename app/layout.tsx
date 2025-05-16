@@ -1,6 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
+
+declare global {
+  interface Window {
+    __track_sdk__: any;
+  }
+}
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -54,7 +61,33 @@ export default function RootLayout({
         <meta property="og:site_name" content="Leona Motyer" />
         <meta property="og:image" content="https://motyer.ca/bikeplane.jpg" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Script id="tracking-script" strategy="afterInteractive">
+          {`
+            (function(siteId){
+              window.__track_sdk__=window.__track_sdk__||{temp:[],report:function(){this.temp.push([].slice.call(arguments))},};
+              (function(doc,tagName){
+                var ele=doc.getElementsByTagName(tagName)[0];
+                function onLoad(){
+                  if(window.__track_sdk__){
+                    window.__track_sdk__.setDefaultConfig({siteId:siteId,})
+                  }
+                }
+                function insert(){
+                  var s=document.createElement('script');
+                  s.type='text/javascript';
+                  s.async=true;
+                  s.src='https://vr.leadsnavi.com/track-sdk.js';
+                  s.onload=onLoad;
+                  ele.parentNode.insertBefore(s,ele)
+                }
+                insert()
+              })(document,'script')
+            })('de698c2d1b7c475b9208d1461479f842');
+          `}
+        </Script>
+      </body>
     </html>
   );
 } 
