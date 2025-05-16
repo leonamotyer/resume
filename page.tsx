@@ -30,7 +30,7 @@ export default function Home() {
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900">
             Leona Motyer
           </h1>
-          <p className="text-2xl text-gray-300 mb-8">Software Engineer & Developer</p>
+          <p className="text-2xl text-gray-300 mb-8">Platform Engineer & Software Developer</p>
           <div className="flex justify-center gap-6">
             <motion.a
               whileHover={{ scale: 1.1 }}
