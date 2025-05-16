@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import experienceData from '../data/experience.json';
 
 interface ExperienceItem {
   title: string;
@@ -8,25 +9,9 @@ interface ExperienceItem {
   description: string[];
 }
 
-const experiences: ExperienceItem[] = [
-  {
-    title: "Platform Engineer",
-    company: "Collective i",
-    period: "2024 - Present",
-    description: [
-    "Achieved significant cost savings by reducing Datadog log expenses by an amount exceeding my monthly salary within my first month.",
-    "Designed and deployed tailored dashboards and monitoring solutions to meet specific company needs.",
-    "Streamlined AWS billing configuration across all accounts using Terraform, enhancing cost control and scalability.",
-    "Enhanced device security for new hires by configuring and encrypting MacBook hard drives with Jamf, and managing their distribution.",
-    "Assisted with Siem configuration",
-    "Assisted team in data migration into AWS",
-    "Configured Snyk report metrics to be sent to google excel with an API call on weekly basis with graphs to show trends"
-    ]
-  },
-  // Add more experiences here
-];
-
 const Experience: React.FC = () => {
+  const experiences = experienceData.experiences as ExperienceItem[];
+
   return (
     <div className="space-y-12">
       {experiences.map((exp, index) => (
