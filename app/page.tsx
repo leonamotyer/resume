@@ -8,6 +8,7 @@ import emailjs from '@emailjs/browser';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
+import Education from '../components/Education';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -134,6 +135,19 @@ export default function Home() {
           Experience
         </motion.h2>
         <Experience />
+      </section>
+
+      {/* Education Section */}
+      <section className="py-20 px-4 max-w-6xl mx-auto bg-gray-900/50">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold mb-12 text-center text-amber-500"
+        >
+          Education
+        </motion.h2>
+        <Education />
       </section>
 
       {/* Skills Section */}
