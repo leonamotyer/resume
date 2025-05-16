@@ -25,7 +25,7 @@ const Education: React.FC = () => {
           </div>
           <div className="mt-4 md:mt-0">
             <span className="bg-amber-500/20 text-amber-500 px-4 py-2 rounded-full text-sm font-semibold">
-              2022 - 2024
+              2023 - 2025
             </span>
           </div>
         </div>

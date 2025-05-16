@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto bg-gray-900/50">
+      <section className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -150,8 +150,57 @@ export default function Home() {
         <Education />
       </section>
 
+      {/* Animated Divider */}
+      <motion.div 
+        className="relative py-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div 
+            className="w-24 h-24 rounded-full border-2 border-amber-500/20 flex items-center justify-center"
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          >
+            <motion.div 
+              className="w-16 h-16 rounded-full border-2 border-amber-500/40"
+              animate={{ 
+                scale: [1, 1.1, 1],
+                rotate: [360, 180, 0],
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              <motion.div 
+                className="w-8 h-8 rounded-full border-2 border-amber-500/60"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 360, 0],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.div>
+
       {/* Skills Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto bg-gray-900/50">
+      <section className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
