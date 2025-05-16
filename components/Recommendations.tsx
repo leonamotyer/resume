@@ -8,14 +8,14 @@ const recommendations = [
     title: 'Senior Platform Engineer, Collective i',
     avatar: 'collectivei.png',
     linkedin: 'https://www.linkedin.com/in/dalinlaqua/',
-    text: 'Leona is a highly skilled engineer who always brings innovative solutions to the table. Her technical expertise and collaborative spirit make her an invaluable team member.'
+    text: '“Leona quickly proved to be dependable, technically adept, and proactive in resolving complex infrastructure challenges.”.'
   },
   {
     name: 'Hani Mohammed',
     title: 'Professor, Southern Alberta Institute of Technology',
     avatar: '/sait.png',
     linkedin: 'https://www.linkedin.com/in/hani-mohammed-ph-d-4ba34a6a/',
-    text: 'Leona demonstrated exceptional problem-solving abilities in my class. She is dedicated, resourceful, and always eager to help her peers succeed.'
+    text: 'Leona consistently brought creativity, precision, and a strong grasp of modern web development practices to the classroom'
   },
   {
     name: 'Camilo Romero',
@@ -29,7 +29,13 @@ const recommendations = [
     title: 'Professor, Southern Alberta Institute of Technology',
     avatar: '/sait.png',
     linkedin: 'https://www.linkedin.com/in/mamta-verma-28a368115/',
-    text: 'Leona is a true asset to any team. Her attention to detail, positive attitude, and strong work ethic set her apart from her peers.'
+    text: 'Leona demonstrated strong leadership, technical depth, and a commitment to quality throughout their capstone project'
+  },
+  {
+    name: 'Troy Kinsella',
+    title: 'Senior Platform Engineer, Collective i',
+    avatar: '/collectivei.png',
+    text: 'Leona was a collaborative and capable teammate, always ready to troubleshoot, contribute, and improve systems efficiently'
   },
  // {
  //   name: 'Mehdi Shokrani',
