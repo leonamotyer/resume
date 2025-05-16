@@ -14,7 +14,7 @@ const experiences: ExperienceItem[] = [
     company: "Collective i",
     period: "2024 - Present",
     description: [
-     "Achieved significant cost savings by reducing Datadog log expenses by an amount exceeding my monthly salary within my first month.",
+    "Achieved significant cost savings by reducing Datadog log expenses by an amount exceeding my monthly salary within my first month.",
     "Designed and deployed tailored dashboards and monitoring solutions to meet specific company needs.",
     "Streamlined AWS billing configuration across all accounts using Terraform, enhancing cost control and scalability.",
     "Enhanced device security for new hires by configuring and encrypting MacBook hard drives with Jamf, and managing their distribution.",
