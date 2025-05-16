@@ -1,4 +1,5 @@
 //Leona Motyer Resume
+//Version 1.2025
 'use client';
 
 import { motion } from 'framer-motion';

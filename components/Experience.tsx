@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import experienceData from '../data/experience.json';
+import Image from 'next/image';
 
 interface ExperienceItem {
   title: string;
   company: string;
   period: string;
   description: string[];
+  image?: string;
 }
 
 const Experience: React.FC = () => {
@@ -33,6 +35,43 @@ const Experience: React.FC = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
+          {exp.title === "Platform Engineer" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, rotateX: 45 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ 
+                duration: 0.6,
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+              className="mt-4 relative w-full max-w-lg mx-auto rounded-md overflow-hidden shadow-lg perspective-1000"
+            >
+              <motion.div
+                initial={{ scale: 0.95 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="relative"
+              >
+                <Image
+                  src="/ingestedlogs.png"
+                  alt="Datadog Log Ingestion Dashboard"
+                  width={600}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                  className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent"
+                >
+                  <p className="text-sm text-amber-500 font-semibold">Log Ingestion Dashboard - Cost Optimization Results</p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
         </motion.div>
       ))}
     </div>
