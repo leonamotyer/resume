@@ -1,129 +1,505 @@
 {
-  "skills": [
-    {
-      "name": "Python",
-      "color": "#3776AB",
-      "category": "Programming Languages"
-    },
-    {
-      "name": "Terraform",
-      "color": "#7B42BC",
-      "category": "Programming Languages"
-    },
-    {
-      "name": "C#",
-      "color": "#512BD4",
-      "category": "Programming Languages"
-    },
-    {
-      "name": "Java",
-      "color": "#007396",
-      "category": "Programming Languages"
-    },
-    {
-      "name": "HTML",
-      "color": "#E34F26",
-      "category": "Web Technologies"
-    },
-    {
-      "name": "CSS",
-      "color": "#1572B6",
-      "category": "Web Technologies"
-    },
-    {
-      "name": "JavaScript",
-      "color": "#F7DF1E",
-      "category": "Web Technologies"
-    },
-    {
-      "name": "TypeScript",
-      "color": "#3178C6",
-      "category": "Web Technologies"
-    },
-    {
-      "name": "AWS",
-      "color": "#FF9900",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "Datadog",
-      "color": "#632CA6",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "Next.js",
-      "color": "#000000",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "React.js",
-      "color": "#61DAFB",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "MAUI Blazor",
-      "color": "#512BD4",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "Visual Studio",
-      "color": "#5C2D91",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "Jira",
-      "color": "#007ACC",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "Confluence",
-      "color": "#0078D7",
-      "category": "Frameworks & Tools"
-    },
-    {
-      "name": "SQL",
-      "color": "#4479A1",
-      "category": "Database Management"
-    },
-    {
-      "name": "MySQL",
-      "color": "#4479A1",
-      "category": "Database Management"
-    },
-    {
-      "name": "Oracle",
-      "color": "#F80000",
-      "category": "Database Management"
-    },
-    {
-      "name": "Supabase",
-      "color": "#3ECF8E",
-      "category": "Database Management"
-    },
-    {
-      "name": "Firebase",
-      "color": "#FFCA28",
-      "category": "Database Management"
-    },
-    {
-      "name": "Git",
-      "color": "#F05032",
-      "category": "Version Control"
-    },
-    {
-      "name": "Linux",
-      "color": "#FCC624",
-      "category": "Operating Systems"
-    },
-    {
-      "name": "Windows",
-      "color": "#0078D6",
-      "category": "Operating Systems"
-    },
-    {
-      "name": "Mac",
-      "color": "#000000",
-      "category": "Operating Systems"
-    }
-  ]
+  "skills": {
+    "Programming Languages": [
+      {
+        "name": "Python",
+        "color": "#3776AB",
+        "expandable": true,
+        "details": {
+          "title": "Python Expertise",
+          "items": [
+            "Scripting & Automation",
+            "Data Analysis & Processing",
+            "API Development",
+            "Web Scraping",
+            "Test Automation",
+            "System Integration"
+          ]
+        }
+      },
+      {
+        "name": "Terraform",
+        "color": "#7B42BC",
+        "expandable": true,
+        "details": {
+          "title": "Terraform Expertise",
+          "items": [
+            "Infrastructure as Code",
+            "Resource Management",
+            "State Management",
+            "Module Development",
+            "Multi-cloud Deployments",
+            "CI/CD Integration"
+          ]
+        }
+      },
+      {
+        "name": "C#",
+        "color": "#512BD4",
+        "expandable": true,
+        "details": {
+          "title": "C# Expertise",
+          "items": [
+            "Object-Oriented Programming",
+            "ASP.NET Development",
+            "Windows Applications",
+            "Database Integration",
+            "Unit Testing",
+            "API Development"
+          ]
+        }
+      },
+      {
+        "name": "Java",
+        "color": "#007396",
+        "expandable": true,
+        "details": {
+          "title": "Java Expertise",
+          "items": [
+            "Enterprise Applications",
+            "Spring Framework",
+            "Database Connectivity",
+            "Testing & Debugging"
+          ]
+        }
+      }
+    ],
+    "Web Technologies": [
+      {
+        "name": "JavaScript",
+        "color": "#F7DF1E",
+        "expandable": true,
+        "details": {
+          "title": "JavaScript Expertise",
+          "items": [
+            "Async Programming",
+            "Event Handling",
+            "API Integration",
+            "Performance Optimization"
+          ]
+        }
+      },
+      {
+        "name": "TypeScript",
+        "color": "#3178C6",
+        "expandable": true,
+        "details": {
+          "title": "TypeScript Expertise",
+          "items": [
+            "HTML",
+            "CSS",
+            "API Development",
+            "Interface Design",
+            "Generics",
+            "Decorators",
+            "Module System",
+            "Integration with Frameworks"
+          ]
+        }
+      }
+    ],
+    "Cloud & Infrastructure": [
+      {
+        "name": "AWS",
+        "color": "#FF9900",
+        "expandable": true,
+        "details": {
+          "title": "AWS Expertise",
+          "items": [
+            "IAM Policy Design & Role Delegation",
+            "EC2 Instance Lifecycle Management",
+            "S3 Storage Optimization",
+            "CloudWatch Logs, Metrics & Alarms",
+            "Multi-account AWS Billing Configuration",
+            "Terraform-based Infrastructure Provisioning",
+            "Security Group & VPC Networking Configuration",
+            "VPC Configuration & Subnet Management",
+            "AWS Config Rules & Compliance",
+            "Lambda Function Configuration & VPC Integration"
+          ]
+        }
+      },
+      {
+        "name": "Azure",
+        "color": "#0078D4",
+        "expandable": true,
+        "details": {
+          "title": "Azure Expertise",
+          "items": [
+            "Virtual Machines",
+            "Azure Functions",
+            "Azure DevOps",
+            "Azure Monitor",
+            "Azure Active Directory",
+            "Azure Networking"
+          ]
+        }
+      },
+      {
+        "name": "Datadog",
+        "color": "#632CA6",
+        "expandable": true,
+        "details": {
+          "title": "Datadog Expertise",
+          "items": [
+            "Log Pipeline Optimization & Retention Control",
+            "Custom Dashboards for Business & Security Teams",
+            "APM Traces & Service Performance Visibility",
+            "Infrastructure & Host Monitoring",
+            "Monitor & Alert Configuration with Routing Logic",
+            "Cost Reduction Strategies",
+            "Security Dashboard & SIEM Signal Surfacing",
+            "Grok Parsing & JSON Facet Extraction",
+            "Custom Log Processing & Field Extraction"
+          ]
+        }
+      },
+      {
+        "name": "Terraform",
+        "color": "#7B42BC",
+        "expandable": true,
+        "details": {
+          "title": "Terraform Expertise",
+          "items": [
+            "Modular Infrastructure Design",
+            "Remote State Backend Management",
+            "Multi-account & Multi-region Deployments",
+            "Cost-efficient AWS Resource Provisioning",
+            "Variable-driven Configurations",
+            "GitOps & CI/CD Integration with Infrastructure",
+            "Policy-as-Code & Compliance Enablement"
+          ]
+        }
+      }
+    ],
+    "Development Tools": [
+      {
+        "name": "Next.js",
+        "color": "#000000",
+        "expandable": true,
+        "details": {
+          "title": "Next.js Expertise",
+          "items": [
+            "Server-side Rendering",
+            "Dynamic Site Generation",
+            "API Routes",
+            "Routing & Navigation",
+            "Performance Optimization",
+            "Deployment & Hosting"
+          ]
+        }
+      },
+      {
+        "name": "React.js",
+        "color": "#61DAFB",
+        "expandable": true,
+        "details": {
+          "title": "React.js Expertise",
+          "items": [
+            "Component Architecture",
+            "State Management",
+            "Hooks & Custom Hooks",
+            "Performance Optimization",
+            "Testing & Debugging",
+            "Integration with Backends"
+          ]
+        }
+      },
+      {
+        "name": "MAUI Blazor",
+        "color": "#512BD4",
+        "expandable": true,
+        "details": {
+          "title": "MAUI Blazor Expertise",
+          "items": [
+            "Cross-platform Development",
+            "UI Component Design",
+            "State Management",
+            "Native Integration",
+            "Performance Optimization",
+            "Deployment & Distribution"
+          ]
+        }
+      },
+      {
+        "name": "Visual Studio",
+        "color": "#5C2D91",
+        "expandable": true,
+        "details": {
+          "title": "Visual Studio Expertise",
+          "items": [
+            "Debugging Tools",
+            "Code Analysis",
+            "Testing Integration",
+            "Version Control",
+            "Extensions & Plugins",
+            "Performance Profiling"
+          ]
+        }
+      },
+      {
+        "name": "Jira",
+        "color": "#007ACC",
+        "expandable": true,
+        "details": {
+          "title": "Jira Expertise",
+          "items": [
+            "Project Management",
+            "Agile Methodologies",
+            "Workflow Automation",
+            "Reporting & Analytics",
+            "Integration Management",
+            "Custom Field Configuration"
+          ]
+        }
+      },
+      {
+        "name": "Confluence",
+        "color": "#0078D7",
+        "expandable": true,
+        "details": {
+          "title": "Confluence Expertise",
+          "items": [
+            "Documentation",
+            "Knowledge Management",
+            "Template Creation",
+            "Integration with Jira",
+            "Space Organization",
+            "Permission Management"
+          ]
+        }
+      },
+      {
+        "name": "Docker",
+        "color": "#2496ED",
+        "expandable": true,
+        "details": {
+          "title": "Docker Expertise",
+          "items": [
+            "Container Orchestration",
+            "Dockerfile Optimization",
+            "Multi-stage Builds",
+            "Volume Management",
+            "Network Configuration",
+            "Security Best Practices"
+          ]
+        }
+      },
+      {
+        "name": "Slack",
+        "color": "#4A154B",
+        "expandable": true,
+        "details": {
+          "title": "Slack Expertise",
+          "items": [
+            "Datadog Monitoring Integration",
+            "Permission Management",
+            "Network Configuration",
+            "Workflow Automation",
+            "Integration Development",
+            "Channel Organization",
+            "Custom App Development",
+            "API Integration",
+            "Two TimeThree Minute Animal Champion"
+          ]
+        }
+      }
+    ],
+    "Database Management": [
+      {
+        "name": "SQL",
+        "color": "#4479A1",
+        "expandable": true,
+        "details": {
+          "title": "SQL Expertise",
+          "items": [
+            "Query Optimization",
+            "Database Design",
+            "Stored Procedures",
+            "Transaction Management",
+            "Indexing Strategies",
+            "Performance Tuning"
+          ]
+        }
+      },
+      {
+        "name": "MySQL",
+        "color": "#4479A1",
+        "expandable": true,
+        "details": {
+          "title": "MySQL Expertise",
+          "items": [
+            "Database Administration",
+            "Performance Tuning",
+            "Replication & Clustering",
+            "Security Management",
+            "Backup & Recovery",
+            "Query Optimization"
+          ]
+        }
+      },
+      {
+        "name": "Oracle",
+        "color": "#F80000",
+        "expandable": true,
+        "details": {
+          "title": "Oracle Expertise",
+          "items": [
+            "Database Administration",
+            "Performance Tuning",
+            "PL/SQL Development",
+            "Security Management",
+            "Backup & Recovery",
+            "High Availability"
+          ]
+        }
+      },
+      {
+        "name": "Supabase",
+        "color": "#3ECF8E",
+        "expandable": true,
+        "details": {
+          "title": "Supabase Expertise",
+          "items": [
+            "Database Management",
+            "Authentication",
+            "Real-time Subscriptions",
+            "Storage Management",
+            "Edge Functions",
+            "API Integration"
+          ]
+        }
+      },
+      {
+        "name": "Firebase",
+        "color": "#FFCA28",
+        "expandable": true,
+        "details": {
+          "title": "Firebase Expertise",
+          "items": [
+            "Realtime Database",
+            "Authentication",
+            "Cloud Functions",
+            "Hosting & Storage",
+            "Analytics & Monitoring",
+            "Security Rules"
+          ]
+        }
+      }
+    ],
+    "Version Control": [
+      {
+        "name": "Git",
+        "color": "#F05032",
+        "expandable": true,
+        "details": {
+          "title": "Git Expertise",
+          "items": [
+            "Branch Management",
+            "Merge Strategies",
+            "Conflict Resolution",
+            "Workflow Automation",
+            "Repository Management",
+            "CI/CD Integration"
+          ]
+        }
+      }
+    ],
+    "Operating Systems": [
+      {
+        "name": "Linux",
+        "color": "#FCC624",
+        "expandable": true,
+        "details": {
+          "title": "Linux Expertise",
+          "items": [
+            "System Administration",
+            "Shell Scripting",
+            "Package Management",
+            "Network Configuration",
+            "Security Hardening",
+            "Container Management"
+          ]
+        }
+      },
+      {
+        "name": "Windows",
+        "color": "#0078D6",
+        "expandable": true,
+        "details": {
+          "title": "Windows Expertise",
+          "items": [
+            "System Administration",
+            "PowerShell Scripting",
+            "Active Directory",
+            "Security Management",
+            "Performance Tuning",
+            "Application Deployment"
+          ]
+        }
+      },
+      {
+        "name": "Mac",
+        "color": "#000000",
+        "expandable": true,
+        "details": {
+          "title": "Mac Expertise",
+          "items": [
+            "System Administration",
+            "Terminal Usage",
+            "Package Management",
+            "Security Features",
+            "Automation Tools",
+            "Development Environment"
+          ]
+        }
+      }
+    ],
+    "Security & Monitoring": [
+      {
+        "name": "Snyk",
+        "color": "#4C4A73",
+        "expandable": true,
+        "details": {
+          "title": "Snyk Expertise",
+          "items": [
+            "Security Report Aggregation via API",
+            "Automated Vulnerability Trend Tracking",
+            "Integration with Google Sheets for Reporting",
+            "Scheduled Metrics Sync with Visualization",
+            "Tooling Integration for Developer Visibility"
+          ]
+        }
+      },
+      {
+        "name": "Jamf",
+        "color": "#FF6F00",
+        "expandable": true,
+        "details": {
+          "title": "Jamf Expertise",
+          "items": [
+            "MacBook Provisioning for New Hires",
+            "FileVault Encryption Configuration",
+            "Device Enrollment & Policy Enforcement",
+            "Custom Scripting for Setup Automation"
+          ]
+        }
+      },
+      {
+        "name": "SIEM (Various)",
+        "color": "#556B2F",
+        "expandable": true,
+        "details": {
+          "title": "SIEM & Security Monitoring",
+          "items": [
+            "Assisting in Event Rule Definition",
+            "Alert Routing and Filtering",
+            "Log Ingestion Strategy",
+            "Platform Integration with AWS & Datadog",
+            "Security Visibility Enablement"
+          ]
+        }
+      }
+    ]
+  }
 } 

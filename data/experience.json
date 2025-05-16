@@ -5,13 +5,15 @@
       "company": "Collective i",
       "period": "2024 - Present",
       "description": [
-        "Achieved significant cost savings by reducing Datadog log expenses by an amount exceeding my monthly salary within my first month.",
-        "Designed and deployed tailored dashboards and monitoring solutions to meet specific company needs.",
-        "Streamlined AWS billing configuration across all accounts using Terraform, enhancing cost control and scalability.",
-        "Enhanced device security for new hires by configuring and encrypting MacBook hard drives with Jamf, and managing their distribution.",
-        "Assisted with Siem configuration",
-        "Assisted team in data migration into AWS",
-        "Configured Snyk report metrics to be sent to google excel with an API call on weekly basis with graphs to show trends"
+        "Slashed observability costs by cutting Datadog log ingestion expenses by over 100% of my own salary in my first month, through retention policy tuning, exclusion filters, and fine-grained control over high-volume sources.",
+        "Built advanced Datadog dashboards with custom widgets, monitors, and composite alerts tailored to engineering and business KPIs — improving incident response and reducing alert fatigue.",
+        "Instrumented services with Datadog APM and logs across multiple environments, enabling better trace visibility and root cause analysis.",
+        "Streamlined AWS billing architecture using Terraform to deploy org-wide cost monitoring, account tagging strategies, and consolidated billing views across multiple accounts and environments.",
+        "Managed IaC with Terraform, implementing reusable modules for AWS services (VPC, IAM, EC2, S3, Lambda), and standardizing infrastructure provisioning workflows.",
+        "Enhanced endpoint security by automating MacBook encryption and configuration via Jamf, integrating it into onboarding processes for better compliance and auditability.",
+        "Contributed to AWS data migration, assisting in storage and access control setup for large datasets moving into S3 and Glacier.",
+        "Assisted SIEM configuration, supporting log source integration and pipeline validation across cloud and SaaS providers.",
+        "Automated Snyk vulnerability reporting, sending weekly API-based reports to Google Sheets with charts for issue tracking and trend analysis, enhancing visibility for the security team."
       ]
     }
   ]
