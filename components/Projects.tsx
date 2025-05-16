@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import projectsData from '../data/projects.json';
+import { SkillsRef } from './Skills';
 
 interface Project {
   title: string;
@@ -12,8 +13,18 @@ interface Project {
   liveUrl?: string;
 }
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  skillsRef: React.RefObject<SkillsRef>;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
   const projects = projectsData.projects as Project[];
+
+  const handleTechnologyClick = (tech: string) => {
+    if (skillsRef.current) {
+      skillsRef.current.expandSkill(tech);
+    }
+  };
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -42,12 +53,15 @@ const Projects: React.FC = () => {
             <p className="text-gray-300 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, i) => (
-                <span
+                <motion.button
                   key={i}
-                  className="px-3 py-1 text-sm bg-amber-500/20 text-amber-300 rounded-full"
+                  onClick={() => handleTechnologyClick(tech)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1 text-sm bg-amber-500/20 text-amber-300 rounded-full hover:bg-amber-500/30 transition-colors cursor-pointer"
                 >
                   {tech}
-                </span>
+                </motion.button>
               ))}
             </div>
             <div className="flex gap-4">

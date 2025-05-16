@@ -3,17 +3,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import Experience from '../components/Experience';
-import Skills from '../components/Skills';
+import Skills, { SkillsRef } from '../components/Skills';
 import Projects from '../components/Projects';
 import Education from '../components/Education';
 import Recommendations from '../components/Recommendations';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const skillsRef = useRef<SkillsRef>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -239,7 +240,7 @@ export default function Home() {
         >
           Projects
         </motion.h2>
-        <Projects />
+        <Projects skillsRef={skillsRef} />
       </section>
 
       {/* Skills Section */}
@@ -252,7 +253,7 @@ export default function Home() {
         >
           Skills
         </motion.h2>
-        <Skills />
+        <Skills ref={skillsRef} />
       </section>
 
       {/* Recommendations Section */}

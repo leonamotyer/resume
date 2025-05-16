@@ -96,6 +96,38 @@
             "Integration with Frameworks"
           ]
         }
+      },
+      {
+        "name": "Tailwind CSS",
+        "color": "#06B6D4",
+        "expandable": true,
+        "details": {
+          "title": "Tailwind CSS Expertise",
+          "items": [
+            "Responsive Design",
+            "Custom Configuration",
+            "Component Styling",
+            "Utility-First Development",
+            "Dark Mode Implementation",
+            "Animation & Transitions"
+          ]
+        }
+      },
+      {
+        "name": "EmailJS",
+        "color": "#FF6B6B",
+        "expandable": true,
+        "details": {
+          "title": "EmailJS Expertise",
+          "items": [
+            "Email Template Integration",
+            "Form Submission Handling",
+            "Service Configuration",
+            "Template Parameter Management",
+            "Error Handling & Validation",
+            "Secure Email Delivery"
+          ]
+        }
       }
     ],
     "Cloud & Infrastructure": [

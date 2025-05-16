@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import skillsData from '../data/skills.json';
 import { FaChevronDown } from 'react-icons/fa';
@@ -17,16 +17,64 @@ interface SkillsData {
   [category: string]: Skill[];
 }
 
-const Skills: React.FC = () => {
+export interface SkillsRef {
+  expandSkill: (skillName: string) => void;
+}
+
+const Skills = forwardRef<SkillsRef>((_, ref) => {
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const skills = skillsData.skills as SkillsData;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // If scrolling up and a skill is expanded, close it
+      if (currentScrollY < lastScrollY && expandedSkill) {
+        setExpandedSkill(null);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, expandedSkill]);
+
+  useEffect(() => {
+    if (expandedSkill) {
+      setTimeout(() => {
+        const skillElement = document.getElementById(`skill-${expandedSkill.toLowerCase().replace(/\s+/g, '-')}`);
+        if (skillElement) {
+          const yOffset = -100;
+          const y = skillElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [expandedSkill]);
+
+  useImperativeHandle(ref, () => ({
+    expandSkill: (skillName: string) => {
+      if (expandedSkill === skillName) {
+        setExpandedSkill(null);
+      } else {
+        setExpandedSkill(skillName);
+      }
+    }
+  }));
+
   const handleSkillClick = (skillName: string) => {
-    setExpandedSkill(expandedSkill === skillName ? null : skillName);
+    if (expandedSkill === skillName) {
+      setExpandedSkill(null);
+    } else {
+      setExpandedSkill(skillName);
+    }
   };
 
   return (
-    <div className="space-y-12">
+    <div id="skills-section" className="space-y-12">
       {Object.entries(skills).map(([category, categorySkills], categoryIndex) => (
         <div key={category} className="space-y-6">
           <motion.h3 
@@ -41,6 +89,7 @@ const Skills: React.FC = () => {
             {categorySkills.map((skill, index) => (
               <div key={skill.name}>
                 <motion.div
+                  id={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -108,6 +157,6 @@ const Skills: React.FC = () => {
       ))}
     </div>
   );
-};
+});
 
 export default Skills; 
