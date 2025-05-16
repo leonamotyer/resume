@@ -123,6 +123,34 @@ export default function Home() {
           </div>
         </motion.div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent" />
+        
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-amber-500"
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </motion.div>
       </section>
 
       {/* Experience Section */}
@@ -200,19 +228,6 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Skills Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-bold mb-12 text-center text-amber-500"
-        >
-          Skills
-        </motion.h2>
-        <Skills />
-      </section>
-
       {/* Projects Section */}
       <section className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
@@ -224,6 +239,19 @@ export default function Home() {
           Projects
         </motion.h2>
         <Projects />
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 px-4 max-w-6xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold mb-12 text-center text-amber-500"
+        >
+          Skills
+        </motion.h2>
+        <Skills />
       </section>
 
       {/* Recommendations Section */}
