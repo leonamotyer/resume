@@ -21,18 +21,21 @@ const skills: Skill[] = [
   { name: "TypeScript", color: "#3178C6", category: "Web Technologies" },
   
   // Frameworks & Tools
-  { name: "AWS", color: "#232F3E", category: "Frameworks & Tools" },
+  { name: "AWS", color: "#FF9900", category: "Frameworks & Tools" },
   { name: "Datadog", color: "#632CA6", category: "Frameworks & Tools" },
   { name: "Next.js", color: "#000000", category: "Frameworks & Tools" },
   { name: "React.js", color: "#61DAFB", category: "Frameworks & Tools" },
   { name: "MAUI Blazor", color: "#512BD4", category: "Frameworks & Tools" },
-  { name: "Oracle", color: "#F80000", category: "Frameworks & Tools" },
   { name: "Visual Studio", color: "#5C2D91", category: "Frameworks & Tools" },
   { name: "Jira", color: "#007ACC", category: "Frameworks & Tools" },
   { name: "Confluence", color: "#0078D7", category: "Frameworks & Tools" },
   
   // Database Management
   { name: "SQL", color: "#4479A1", category: "Database Management" },
+  { name: "MySQL", color: "#4479A1", category: "Database Management" },
+  { name: "Oracle", color: "#F80000", category: "Database Management" },
+  { name: "Supabase", color: "#3ECF8E", category: "Database Management" },
+  { name: "Firebase", color: "#FFCA28", category: "Database Management" },
   
   // Version Control
   { name: "Git", color: "#F05032", category: "Version Control" },
