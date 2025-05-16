@@ -62,7 +62,7 @@ const Experience: React.FC = () => {
                 className="relative"
               >
                 <Image
-                  src="/ingestedlogs.png"
+                  src="/collectiveLogs.png"
                   alt="Datadog Log Ingestion Dashboard"
                   width={600}
                   height={300}
