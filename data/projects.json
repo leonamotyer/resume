@@ -16,7 +16,7 @@
     },
     {
       "title": "No Cap Cafe",
-      "description": "Developed a comprehensive restaurant management system that handles everything from table assignments to order tracking.",
+      "description": "Developed a comprehensive restaurant management system that handles everything from table assignments to inventory tracking and reporting.",
       "technologies": ["C#", "Visual Studio", ".NET", "MySQL Server"],
       "githubUrl": "https://github.com/CDanielTurner/OOP2ResturantManager",
       "image": "/nocapcafe.png"
