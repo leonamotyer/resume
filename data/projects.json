@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "title": "YYC Food Trucks - Employee & Event Management System",
+      "description": "Developed a comprehensive full-stack platform for food truck operations management. Implemented features including employee scheduling, event coordination, shift tracking, and real-time availability monitoring. Built with modern web technologies and a focus on scalability and user experience.",
+      "technologies": ["TypeScript", "Next.js", "React", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      "githubUrl": "https://github.com/leonamotyer/capstoneGOATS",
+      "image": "/yycfoodtrucks.png"
+    },
+    {
+      "title": "Rollin' in Dough",
+      "description": "Developed a sweet e-commerce platform for a local baker. Now cookie lovers can order their fix 24/7.",
+      "technologies": ["TypeScript", "Next.js", "React", "Tailwind CSS", "Square API", "Email.js API"],
+      "githubUrl": "https://github.com/yoohyunk/rollin-in-dough",
+      "image": "/rollinindough.png"
+    },
+    {
+      "title": "No Cap Cafe",
+      "description": "Developed a comprehensive restaurant management system that handles everything from table assignments to order tracking.",
+      "technologies": ["C#", "Visual Studio", ".NET", "MySQL Server"],
+      "githubUrl": "https://github.com/CDanielTurner/OOP2ResturantManager",
+      "image": "/nocapcafe.png"
+    },
+    {
+      "title": "Noize",
+      "description": "Developed a music streaming platform featuring playlist management, search functionality, and a clean user interface. Built with modern web technologies and focused on delivering a smooth user experience.",
+      "technologies": ["TypeScript", "Next.js", "React", "Tailwind CSS", "Supabase"],
+      "githubUrl": "https://github.com/leonamotyer/Noize",
+      "image": "/noize.png"
+    }
+  ]
+} 

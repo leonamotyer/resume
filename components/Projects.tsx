@@ -1,48 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import projectsData from '../data/projects.json';
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
-  githubUrl?: string;
+  githubUrl: string;
+  image: string;
   liveUrl?: string;
-  image?: string;
 }
 
-const projects: Project[] = [
-  {
-    title: "YYC Food Trucks - Employee & Event Management System",
-    description: "Developed a comprehensive full-stack platform for food truck operations management. Implemented features including employee scheduling, event coordination, shift tracking, and real-time availability monitoring. Built with modern web technologies and a focus on scalability and user experience.",
-    technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Prisma", "PostgreSQL"],
-    githubUrl: "https://github.com/leonamotyer/capstoneGOATS",
-    image: "/yycfoodtrucks.png"
-  },
-  {
-    title: "Rollin' in Dough",
-    description: "Developed a sweet e-commerce platform for a local baker. Now cookie lovers can order their fix 24/7.",
-    technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Square API", "Email.js API"],
-    githubUrl: "https://github.com/yoohyunk/rollin-in-dough",//https://github.com/leonamotyer/rollin-in-dough",
-    image: "/rollinindough.png"
-  },
-  {
-    title: "No Cap Cafe",
-    description: "Developed a comprehensive restaurant management system that handles everything from table assignments to order tracking.",
-    technologies: ["C#", "Visual Studio", ".NET", "MySQL Server"],
-    githubUrl: "https://github.com/CDanielTurner/OOP2ResturantManager",
-    image: "/nocapcafe.png"
-  },
-  {
-    title: "Noize",
-    description: "Built a music streaming platform that's basically Spotify's knockoff. Features include playlist creation, dynamic search functions.",
-    technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Supabase"],
-    githubUrl: "https://github.com/leonamotyer/Noize",
-    image: "/noize.png"
-  }
-];
-
 const Projects: React.FC = () => {
+  const projects = projectsData.projects as Project[];
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, index) => (
@@ -89,7 +61,7 @@ const Projects: React.FC = () => {
                   <FaGithub className="text-xl" />
                 </a>
               )}
-              {project.liveUrl && (
+              {'liveUrl' in project && project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"

@@ -1,53 +1,19 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
+import recommendationsData from '../data/recommendations.json';
 
-const recommendations = [
-  {
-    name: 'Dalin Laqua',
-    title: 'Senior Platform Engineer, Collective i',
-    avatar: 'collectivei.png',
-    linkedin: 'https://www.linkedin.com/in/dalinlaqua/',
-    text: '“Leona quickly proved to be dependable, technically adept, and proactive in resolving complex infrastructure challenges.”.'
-  },
-  {
-    name: 'Hani Mohammed',
-    title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.png',
-    linkedin: 'https://www.linkedin.com/in/hani-mohammed-ph-d-4ba34a6a/',
-    text: 'Leona consistently brought creativity, precision, and a strong grasp of modern web development practices to the classroom'
-  },
-  {
-    name: 'Camilo Romero',
-    title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.png',
-    linkedin: 'https://www.linkedin.com/in/rickdeoliveira/',
-    text: 'Leona consistently impressed me with her creativity and leadership. She has a knack for turning complex challenges into opportunities for growth.'
-  },
-  {
-    name: 'Mamta Verma',
-    title: 'Professor, Southern Alberta Institute of Technology',
-    avatar: '/sait.png',
-    linkedin: 'https://www.linkedin.com/in/mamta-verma-28a368115/',
-    text: 'Leona demonstrated strong leadership, technical depth, and a commitment to quality throughout their capstone project'
-  },
-  {
-    name: 'Troy Kinsella',
-    title: 'Senior Platform Engineer, Collective i',
-    avatar: '/collectivei.png',
-    text: 'Leona was a collaborative and capable teammate, always ready to troubleshoot, contribute, and improve systems efficiently'
-  },
- // {
- //   name: 'Mehdi Shokrani',
- //   title: 'Professor, Southern Alberta Institute of Technology',
- //    avatar: '/sait.png',
- //   linkedin: 'https://www.linkedin.com/in/mamta-verma-28a368115/',
- //   text: 'Leona consistently delivers high-quality work and is a great collaborator. She is a true asset to any team.'
- // },
-];
+interface Recommendation {
+  name: string;
+  title: string;
+  avatar: string;
+  linkedin?: string;
+  text: string;
+}
 
 export default function Recommendations() {
   const [index, setIndex] = useState(0);
+  const recommendations = recommendationsData.recommendations as Recommendation[];
 
   const next = () => setIndex((prev) => (prev + 1) % recommendations.length);
   const prev = () => setIndex((prev) => (prev - 1 + recommendations.length) % recommendations.length);
@@ -108,7 +74,7 @@ export default function Recommendations() {
                   <span className="sr-only">LinkedIn</span>
                 </a>
               )}
-              <p className="text-gray-300 text-center italic">“{recommendations[index].text}”</p>
+              <p className="text-gray-300 text-center italic">"{recommendations[index].text}"</p>
             </motion.div>
           </AnimatePresence>
         </div>
