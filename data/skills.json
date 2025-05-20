@@ -19,7 +19,7 @@
       },
       {
         "name": "Terraform",
-        "color": "#7B42BC",
+        "color": "#9B6BDF",
         "expandable": true,
         "details": {
           "title": "Terraform Expertise",
@@ -35,7 +35,7 @@
       },
       {
         "name": "C#",
-        "color": "#68217A",
+        "color": "#9B4DCA",
         "expandable": true,
         "details": {
           "title": "C# Expertise",
@@ -51,7 +51,7 @@
       },
       {
         "name": "Java",
-        "color": "#007396",
+        "color": "#00A4E4",
         "expandable": true,
         "details": {
           "title": "Java Expertise",
@@ -99,7 +99,7 @@
       },
       {
         "name": "Tailwind CSS",
-        "color": "#06B6D4",
+        "color": "#38BDF8",
         "expandable": true,
         "details": {
           "title": "Tailwind CSS Expertise",
@@ -169,7 +169,7 @@
       },
       {
         "name": "Datadog",
-        "color": "#632CA6",
+        "color": "#7B4BFF",
         "expandable": true,
         "details": {
           "title": "Datadog Expertise",
@@ -188,7 +188,7 @@
       },
       {
         "name": "Terraform",
-        "color": "#7B42BC",
+        "color": "#9B6BDF",
         "expandable": true,
         "details": {
           "title": "Terraform Expertise",
@@ -207,7 +207,7 @@
     "Development Tools": [
       {
         "name": "Next.js",
-        "color": "#000000",
+        "color": "#0070F3",
         "expandable": true,
         "details": {
           "title": "Next.js Expertise",
@@ -239,7 +239,7 @@
       },
       {
         "name": "MAUI Blazor",
-        "color": "#512BD4",
+        "color": "#7B4BFF",
         "expandable": true,
         "details": {
           "title": "MAUI Blazor Expertise",
@@ -255,7 +255,7 @@
       },
       {
         "name": "Visual Studio",
-        "color": "#5C2D91",
+        "color": "#8A2BE2",
         "expandable": true,
         "details": {
           "title": "Visual Studio Expertise",
@@ -472,7 +472,7 @@
       },
       {
         "name": "Mac",
-        "color": "#000000",
+        "color": "#A2AAAD",
         "expandable": true,
         "details": {
           "title": "Mac Expertise",
@@ -490,7 +490,7 @@
     "Security & Monitoring": [
       {
         "name": "Snyk",
-        "color": "#4C4A73",
+        "color": "#A2AAAD",
         "expandable": true,
         "details": {
           "title": "Snyk Expertise",
@@ -519,7 +519,7 @@
       },
       {
         "name": "SIEM (Various)",
-        "color": "#556B2F",
+        "color": "#7CB342",
         "expandable": true,
         "details": {
           "title": "SIEM & Security Monitoring",
