@@ -207,7 +207,7 @@
     "Development Tools": [
       {
         "name": "Next.js",
-        "color": "#0070F3",
+        "color": "#A2AAAD",
         "expandable": true,
         "details": {
           "title": "Next.js Expertise",
@@ -372,7 +372,7 @@
       },
       {
         "name": "Oracle",
-        "color": "#F80000",
+        "color": "#A2AAAD",
         "expandable": true,
         "details": {
           "title": "Oracle Expertise",
@@ -422,7 +422,7 @@
     "Version Control": [
       {
         "name": "Git",
-        "color": "#F05032",
+        "color": "#A2AAAD",
         "expandable": true,
         "details": {
           "title": "Git Expertise",

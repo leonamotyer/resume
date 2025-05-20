@@ -93,8 +93,8 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`relative bg-red-700/40 p-6 rounded-lg border border-red-600/50 ${
-                    skill.expandable ? 'cursor-pointer hover:bg-red-700/60 group' : ''
+                  className={`relative bg-red-600/20 p-6 rounded-lg border border-red-500/30 ${
+                    skill.expandable ? 'cursor-pointer hover:bg-red-600/30 group' : ''
                   }`}
                   onClick={() => skill.expandable && handleSkillClick(skill.name)}
                   whileHover={skill.expandable ? { 
@@ -130,7 +130,7 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-4 bg-red-700/30 rounded-lg p-6 border border-red-600/30"
+                      className="mt-4 bg-red-600/15 rounded-lg p-6 border border-red-500/20"
                     >
                       <h4 className="text-amber-400 font-medium mb-4">{skill.details.title}</h4>
                       <ul className="space-y-2 text-gray-300">
