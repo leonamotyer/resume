@@ -9,9 +9,9 @@
         "Built advanced Datadog dashboards with custom widgets, monitors, and composite alerts tailored to engineering and business KPIs — improving incident response and reducing alert fatigue.",
         "Instrumented services with Datadog APM and logs across multiple environments, enabling better trace visibility and root cause analysis.",
         "Streamlined AWS billing architecture using Terraform to deploy org-wide cost monitoring, account tagging strategies, and consolidated billing views across multiple accounts and environments.",
-        "Managed IaC with Terraform, implementing reusable modules for AWS services (VPC, IAM, EC2, S3, Lambda), and standardizing infrastructure provisioning workflows.",
+        "Managed IaC with Terraform, implementing reusable modules for AWS services (VPC, IAM, EC2, S3, billing), and standardizing infrastructure provisioning workflows.",
         "Enhanced endpoint security by automating MacBook encryption and configuration via Jamf, integrating it into onboarding processes for better compliance and auditability.",
-        "Contributed to AWS data migration, assisting in storage and access control setup for large datasets moving into S3 and Glacier.",
+        "Contributed to AWS data migration, assisting in storage and access control setup for billing data for all accounts.",
         "Assisted SIEM configuration, supporting log source integration and pipeline validation across cloud and SaaS providers.",
         "Automated Snyk vulnerability reporting, sending weekly API-based reports to Google Sheets with charts for issue tracking and trend analysis, enhancing visibility for the security team."
       ]

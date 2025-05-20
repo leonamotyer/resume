@@ -23,7 +23,7 @@
     },
     {
       "title": "Noize",
-      "description": "Collaborated on a music streaming platform my focus was on the UI, dynamic search functionality, secure login, database connectivity, and the song display page with functionality. ",
+      "description": "Collaborated on a music streaming platform my focus was on the UI, dynamic search functionality, secure login, and the song display page with functionality. ",
       "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Supabase"],
       "githubUrl": "https://github.com/leonamotyer/Noize",
       "image": "/noize.png"
