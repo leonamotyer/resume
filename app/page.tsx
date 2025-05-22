@@ -125,7 +125,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="/data/LMotyerResume2025.docx"
+              href="/LMotyerResume2025.docx"
               download
               className="text-2xl hover:text-amber-500 transition-colors"
             >
