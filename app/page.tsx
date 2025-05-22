@@ -4,7 +4,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import Experience from '../components/Experience';
 import Skills, { SkillsRef } from '../components/Skills';
@@ -121,6 +121,15 @@ export default function Home() {
               className="text-2xl hover:text-amber-500 transition-colors"
             >
               <FaEnvelope />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="/data/LMotyerResume2025.docx"
+              download
+              className="text-2xl hover:text-amber-500 transition-colors"
+            >
+              <FaFileDownload />
             </motion.a>
           </div>
         </motion.div>
