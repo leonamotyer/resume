@@ -117,7 +117,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:rlmotyer@gmail.com"
+              href="mailto:leona@motyer.ca"
               className="text-2xl hover:text-amber-500 transition-colors"
             >
               <FaEnvelope />
