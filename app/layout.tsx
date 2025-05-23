@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://motyer.ca'),
   title: 'Leona Motyer - Portfolio',
   description: 'Platform Engineer, Software Developer Portfolio',
+  icons: {
+    icon: '/bikeplane.jpg',
+    apple: '/bikeplane.jpg',
+  },
   openGraph: {
     title: 'Leona Motyer - Portfolio',
     description: 'Platform Engineer, Software Developer Portfolio',

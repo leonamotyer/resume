@@ -337,6 +337,72 @@ export default function Home() {
           </form>
         </div>
       </section>
+
+      {/* About Author Section */}
+      <section className="py-20 px-4 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row items-center gap-12"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="md:w-1/2"
+          >
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-red-900 rounded-lg blur opacity-25"></div>
+              <img
+                src="/bikeplane.jpg"
+                alt="Leona Motyer - Platform Engineer"
+                className="relative rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="md:w-1/2"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-amber-500">About Me</h2>
+            <p className="text-lg text-gray-300 mb-4">
+            I'm Leona, a platform engineer with a sharp focus on building scalable, secure, and efficient infrastructure. 
+            My background blends hands-on experience in cloud platforms like AWS and Azure with a strong foundation in 
+            automation, observability, and system design. I’m particularly drawn to the intersection of performance, 
+            reliability, and developer experience — where thoughtful tooling and well-architected systems make the 
+            difference between chaos and clarity.
+            </p>
+            <p className="text-lg text-gray-300 mb-4">
+            I take pride in solving hard problems with precision, whether it's optimizing cloud costs, improving 
+            CI/CD workflows, or building out monitoring that looks pretty. Outside of tech, I rebuild cars,
+            snowboard through the winters, and motorcycle through the summers.
+            </p>
+            <div className="flex gap-4 mt-6">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://github.com/leonamotyer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2 bg-amber-500 text-black rounded-lg font-semibold hover:bg-amber-400 transition-colors"
+              >
+                View My Work
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="mailto:leona@motyer.ca"
+                className="px-6 py-2 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors"
+              >
+                Get in Touch
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
     </main>
   );
 } 
