@@ -12,6 +12,7 @@
       "description": "Developed a sweet e-commerce platform for a local baker. Now cookie lovers can order their fix 24/7.",
       "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Square API", "Email.js API", "Firebase"],
       "githubUrl": "https://github.com/yoohyunk/rollin-in-dough",
+      "liveUrl": "https://rollin-in-dough.vercel.app/",
       "image": "/rollinindough.png"
     },
     {
