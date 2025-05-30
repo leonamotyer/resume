@@ -1,0 +1,21 @@
+{
+  "about": {
+    "title": "About Me",
+    "image": "/bikeplane.jpg",
+    "imageAlt": "Leona Motyer - Platform Engineer",
+    "description": [
+      "I'm Leona, a platform engineer with a sharp focus on building scalable, secure, and efficient infrastructure. My background blends hands-on experience in cloud platforms like AWS and Azure with a strong foundation in automation, observability, and system design. I'm particularly drawn to the intersection of performance, reliability, and developer experience — where thoughtful tooling and well-architected systems make the difference between chaos and clarity.",
+      "I take pride in solving hard problems with precision, whether it's optimizing cloud costs, improving CI/CD workflows, or building out monitoring that looks pretty. Outside of tech, I rebuild cars, snowboard through the winters, and motorcycle through the summers. I also maintain a personal headless Ubuntu server environment where I've implemented a fully automated media archival pipeline using Docker and a custom CLI. This project reflects my hands-on experience with Linux system administration, scripting for operational efficiency, and deploying structured services in a self-hosted environment—skills I'm eager to expand in a professional cloud operations role."
+    ],
+    "links": {
+      "github": {
+        "url": "https://github.com/leonamotyer",
+        "text": "View My Work"
+      },
+      "email": {
+        "url": "mailto:leona@motyer.ca",
+        "text": "Get in Touch"
+      }
+    }
+  }
+} 
