@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "title": "Self-Hosted Media Server – Automated DVD Archival & Streaming",
+      "description": "Built a self-hosted media server from scratch using a headless Ubuntu install via bootable USB and ISO. Automated the entire DVD ripping and archival process with Docker, including metadata tagging, renaming, and structured file organization. Integrated an open-source streaming platform for local media access, and developed a custom CLI tool for effortless media ingestion based on title, season, and episode input.",
+      "technologies": ["Ubuntu", "Docker", "Bash", "CLI", "Open Source Streaming Platform"],
+      "image": "/plex-logo.webp"
+    },
+    {
       "title": "YYC Food Trucks - Employee & Event Management System",
       "description": "Developed a comprehensive full-stack capstone project for food truck operations management. Implemented features including employee scheduling, event coordination, shift tracking, and real-time availability monitoring. Built with modern web technologies and a focus on scalability and user experience.",
       "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Supabase"],
