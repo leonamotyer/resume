@@ -532,6 +532,79 @@
           ]
         }
       }
+    ],
+    "System Administration & DevOps": [
+      {
+        "name": "Ubuntu",
+        "color": "#E95420",
+        "expandable": true,
+        "details": {
+          "title": "Ubuntu",
+          "items": [
+            "Headless Server Setup",
+            "System Administration",
+            "Package Management",
+            "Service Configuration",
+            "Security Hardening",
+            "Network Configuration",
+            "Bootable USB Creation",
+            "ISO Installation"
+          ]
+        }
+      },
+      {
+        "name": "Docker",
+        "color": "#2496ED",
+        "expandable": true,
+        "details": {
+          "title": "Docker Expertise",
+          "items": [
+            "Container Orchestration",
+            "Docker Compose",
+            "Image Management",
+            "Volume Management",
+            "Network Configuration",
+            "Service Deployment",
+            "Automated Workflows"
+          ]
+        }
+      },
+      {
+        "name": "Bash",
+        "color": "#4EAA25",
+        "expandable": true,
+        "details": {
+          "title": "Bash Expertise",
+          "items": [
+            "Shell Scripting",
+            "Process Automation",
+            "System Administration",
+            "File Operations",
+            "Text Processing",
+            "Command Line Tools",
+            "Task Scheduling",
+            "Error Handling"
+          ]
+        }
+      },
+      {
+        "name": "CLI Development",
+        "color": "#4B32C3",
+        "expandable": true,
+        "details": {
+          "title": "CLI Development Expertise",
+          "items": [
+            "Custom Tool Development",
+            "Command Line Interface Design",
+            "User Input Processing",
+            "File System Operations",
+            "Process Management",
+            "Error Handling",
+            "Output Formatting",
+            "Configuration Management"
+          ]
+        }
+      }
     ]
   }
 } 

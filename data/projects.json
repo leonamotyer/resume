@@ -3,7 +3,7 @@
     {
       "title": "Self-Hosted Media Server – Automated DVD Archival & Streaming",
       "description": "Built a self-hosted media server from scratch using a headless Ubuntu install via bootable USB and ISO. Automated the entire DVD ripping and archival process with Docker, including metadata tagging, renaming, and structured file organization. Integrated an open-source streaming platform for local media access, and developed a custom CLI tool for effortless media ingestion based on title, season, and episode input.",
-      "technologies": ["Ubuntu", "Docker", "Bash", "CLI", "Open Source Streaming Platform"],
+      "technologies": ["Ubuntu", "Docker", "Bash", "CLI", "Plex"],
       "image": "/plex-logo.webp"
     },
     {
