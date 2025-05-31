@@ -439,6 +439,24 @@
     ],
     "Operating Systems": [
       {
+        "name": "Ubuntu",
+        "color": "#E95420",
+        "expandable": true,
+        "details": {
+          "title": "Ubuntu",
+          "items": [
+            "Headless Server Setup",
+            "System Administration",
+            "Package Management",
+            "Service Configuration",
+            "Security Hardening",
+            "Network Configuration",
+            "Bootable USB Creation",
+            "ISO Installation"
+          ]
+        }
+      },
+      {
         "name": "Linux",
         "color": "#FCC624",
         "expandable": true,
@@ -534,24 +552,6 @@
       }
     ],
     "System Administration & DevOps": [
-      {
-        "name": "Ubuntu",
-        "color": "#E95420",
-        "expandable": true,
-        "details": {
-          "title": "Ubuntu",
-          "items": [
-            "Headless Server Setup",
-            "System Administration",
-            "Package Management",
-            "Service Configuration",
-            "Security Hardening",
-            "Network Configuration",
-            "Bootable USB Creation",
-            "ISO Installation"
-          ]
-        }
-      },
       {
         "name": "Docker",
         "color": "#2496ED",
