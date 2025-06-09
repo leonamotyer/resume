@@ -1,18 +1,18 @@
 {
   "recommendations": [
-    {
-      "name": "Tad Martin",
-      "title": "Co-founder/CEO, Collective i",
-      "avatar": "/collectivei.png",
-      "linkedin": "https://www.linkedin.com/in/tadmartin1/",
-      "text": "Leona's technical expertise and proactive approach to infrastructure challenges have made a significant impact at Collective i. Her ability to drive improvements and cost savings while maintaining system stability is exceptional."
-    },
     { 
       "name": "Dalin Laqua",
       "title": "Director of Engineering, Collective i",
       "avatar": "collectivei.png",
       "linkedin": "https://www.linkedin.com/in/dalinlaqua/",
       "text": "Best intern I've seen in my career. Leona completed her internship on my team and she defied all expectations of what an intern can do. She jumped into complex problems, read the manual, and came up with solutions. We actually had her training more senior staff and her efforts lead to real efficiency gains and cost savings. If we had the budget to keep her on full time we would have. I can't recommend her strongly enough and will be happy to speak with any prospective employers about her potential."
+    },
+    {
+      "name": "Tad Martin",
+      "title": "Co-founder/CEO, Collective i",
+      "avatar": "/collectivei.png",
+      "linkedin": "https://www.linkedin.com/in/tadmartin1/",
+      "text": "Leona's technical expertise and proactive approach to infrastructure challenges have made a significant impact at Collective i. Her ability to drive improvements and cost savings while maintaining system stability is exceptional."
     },
     {
       "name": "Troy Kinsella",
