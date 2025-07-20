@@ -47,8 +47,31 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
       setTimeout(() => {
         const skillElement = document.getElementById(`skill-${expandedSkill.toLowerCase().replace(/\s+/g, '-')}`);
         if (skillElement) {
+          // Calculate the current position of the element
+          const elementRect = skillElement.getBoundingClientRect();
+          const elementTop = elementRect.top + window.pageYOffset;
+          
+          // Find any expanded content that might be above this element
+          let expandedContentHeight = 0;
+          const allSkillElements = document.querySelectorAll('[id^="skill-"]');
+          
+          allSkillElements.forEach((el) => {
+            const skillName = el.id.replace('skill-', '').replace(/-/g, ' ');
+            const skillNameNormalized = skillName.replace(/\s+/g, ' ').trim();
+            const expandedSkillNormalized = expandedSkill.toLowerCase().replace(/\s+/g, ' ');
+            
+            // If this element is above our target and has expanded content
+            if (el.getBoundingClientRect().top < elementRect.top && 
+                skillNameNormalized !== expandedSkillNormalized) {
+              const expandedContent = el.nextElementSibling;
+              if (expandedContent && expandedContent.classList.contains('bg-red-600/15')) {
+                expandedContentHeight += expandedContent.offsetHeight;
+              }
+            }
+          });
+          
           const yOffset = -100;
-          const y = skillElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          const y = elementTop + expandedContentHeight + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);
