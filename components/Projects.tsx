@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import projectsData from '../data/projects.json';
-import { SkillsRef } from './Skills';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import projectsData from "../data/projects.json";
+import { SkillsRef } from "./Skills";
 
 interface Project {
   title: string;
@@ -25,7 +25,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
       skillsRef.current.expandSkill(tech);
     }
   };
-  
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, index) => (
@@ -49,7 +49,9 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
             />
           )}
           <div className="p-6">
-            <h3 className="text-xl font-bold text-amber-500 mb-2">{project.title}</h3>
+            <h3 className="text-xl font-bold text-amber-500 mb-2">
+              {project.title}
+            </h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, i) => (
@@ -75,7 +77,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
                   <FaGithub className="text-xl" />
                 </a>
               )}
-              {'liveUrl' in project && project.liveUrl && (
+              {"liveUrl" in project && project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -93,4 +95,4 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
   );
 };
 
-export default Projects; 
+export default Projects;

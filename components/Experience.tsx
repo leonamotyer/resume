@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import experienceData from '../data/experience.json';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import experienceData from "../data/experience.json";
+import Image from "next/image";
 
 interface ExperienceItem {
   title: string;
@@ -39,11 +39,11 @@ const Experience: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: 45 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ 
+              transition={{
                 duration: 0.6,
                 delay: 0.2,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               className="mt-4 relative w-full max-w-lg mx-auto rounded-md overflow-hidden shadow-lg perspective-1000"
             >
@@ -53,7 +53,9 @@ const Experience: React.FC = () => {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-black/80 to-transparent z-10"
               >
-                <p className="text-sm text-amber-500 font-semibold">Log Ingestion Dashboard - Cost Optimization Results</p>
+                <p className="text-sm text-amber-500 font-semibold">
+                  Log Ingestion Dashboard - Cost Optimization Results
+                </p>
               </motion.div>
               <motion.div
                 initial={{ scale: 0.95 }}
@@ -78,4 +80,4 @@ const Experience: React.FC = () => {
   );
 };
 
-export default Experience; 
+export default Experience;

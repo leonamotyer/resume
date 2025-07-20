@@ -1,47 +1,52 @@
 //Leona Motyer Resume
 //Version 1.2025
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
-import Experience from '../components/Experience';
-import Skills, { SkillsRef } from '../components/Skills';
-import Projects from '../components/Projects';
-import Education from '../components/Education';
-import Recommendations from '../components/Recommendations';
-import About from '../components/About';
+import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaFileDownload,
+} from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import Experience from "../components/Experience";
+import Skills, { SkillsRef } from "../components/Skills";
+import Projects from "../components/Projects";
+import Education from "../components/Education";
+import Recommendations from "../components/Recommendations";
+import About from "../components/About";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const skillsRef = useRef<SkillsRef>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [status, setStatus] = useState({
     submitting: false,
     submitted: false,
-    error: null
+    error: null,
   });
 
   useEffect(() => {
     setMounted(true);
     // Initialize EmailJS with your public key
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted');
-    
+    console.log("Form submitted");
+
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
       const templateParams = {
-        to_name: 'Leona',
+        to_name: "Leona",
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
@@ -49,32 +54,35 @@ export default function Home() {
       };
 
       const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
         templateParams
       );
 
       if (result.status === 200) {
         setStatus({ submitting: false, submitted: true, error: null });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         throw new Error(`Failed to send message. Status: ${result.status}`);
       }
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      setStatus({ 
-        submitting: false, 
-        submitted: false, 
-        error: 'Failed to send message. Please check your connection and try again.' 
+      console.error("EmailJS Error:", error);
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error:
+          "Failed to send message. Please check your connection and try again.",
       });
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    console.log('Form field changed:', e.target.id, e.target.value);
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    console.log("Form field changed:", e.target.id, e.target.value);
+    setFormData((prev) => ({
       ...prev,
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     }));
   };
 
@@ -93,7 +101,9 @@ export default function Home() {
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900">
             Leona Motyer
           </h1>
-          <p className="text-2xl text-gray-300 mb-8">Platform Engineer & Software Developer</p>
+          <p className="text-2xl text-gray-300 mb-8">
+            Platform Engineer & Software Developer
+          </p>
           <div className="flex justify-center gap-6">
             <motion.a
               whileHover={{ scale: 1.1 }}
@@ -135,7 +145,7 @@ export default function Home() {
           </div>
         </motion.div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent" />
-        
+
         {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-amber-500"
@@ -145,7 +155,7 @@ export default function Home() {
           transition={{
             duration: 1.5,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         >
           <svg
@@ -192,47 +202,47 @@ export default function Home() {
       </section>
 
       {/* Animated Divider */}
-      <motion.div 
+      <motion.div
         className="relative py-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div 
+          <motion.div
             className="w-24 h-24 rounded-full border-2 border-amber-500/20 flex items-center justify-center"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
             }}
-            transition={{ 
+            transition={{
               duration: 4,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
           >
-            <motion.div 
+            <motion.div
               className="w-16 h-16 rounded-full border-2 border-amber-500/40"
-              animate={{ 
+              animate={{
                 scale: [1, 1.1, 1],
                 rotate: [360, 180, 0],
               }}
-              transition={{ 
+              transition={{
                 duration: 3,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
               }}
             >
-              <motion.div 
+              <motion.div
                 className="w-8 h-8 rounded-full border-2 border-amber-500/60"
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
                   rotate: [0, 360, 0],
                 }}
-                transition={{ 
+                transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               />
             </motion.div>
@@ -285,7 +295,10 @@ export default function Home() {
         <div className="max-w-md mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Name
               </label>
               <input
@@ -298,7 +311,10 @@ export default function Home() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Email
               </label>
               <input
@@ -311,7 +327,10 @@ export default function Home() {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Message
               </label>
               <textarea
@@ -327,7 +346,9 @@ export default function Home() {
               <p className="text-red-500 text-sm">{status.error}</p>
             )}
             {status.submitted && (
-              <p className="text-green-500 text-sm">Message sent successfully!</p>
+              <p className="text-green-500 text-sm">
+                Message sent successfully!
+              </p>
             )}
             <motion.button
               type="submit"
@@ -336,11 +357,11 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="w-full py-3 px-4 rounded-md bg-gradient-to-r from-amber-500 to-red-900 text-white font-medium hover:from-amber-600 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status.submitting ? 'Sending...' : 'Send Message'}
+              {status.submitting ? "Sending..." : "Send Message"}
             </motion.button>
           </form>
         </div>
       </section>
     </main>
   );
-} 
+}

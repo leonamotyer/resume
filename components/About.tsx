@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import aboutData from '../data/about.json';
+import React from "react";
+import { motion } from "framer-motion";
+import aboutData from "../data/about.json";
 
 const About: React.FC = () => {
   const { about } = aboutData;
@@ -34,7 +34,9 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="md:w-1/2"
         >
-          <h2 className="text-4xl font-bold mb-6 text-amber-500">{about.title}</h2>
+          <h2 className="text-4xl font-bold mb-6 text-amber-500">
+            {about.title}
+          </h2>
           {about.description.map((paragraph, index) => (
             <p key={index} className="text-lg text-gray-300 mb-4">
               {paragraph}
@@ -66,4 +68,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About; 
+export default About;

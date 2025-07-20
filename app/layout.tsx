@@ -1,7 +1,7 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Script from 'next/script';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
 
 declare global {
   interface Window {
@@ -9,46 +9,46 @@ declare global {
   }
 }
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://motyer.ca'),
-  title: 'Leona Motyer - Portfolio',
-  description: 'Platform Engineer, Software Developer Portfolio',
+  metadataBase: new URL("https://motyer.ca"),
+  title: "Leona Motyer - Portfolio",
+  description: "Platform Engineer, Software Developer Portfolio",
   icons: {
-    icon: '/bikeplane.jpg',
-    apple: '/bikeplane.jpg',
+    icon: "/bikeplane.jpg",
+    apple: "/bikeplane.jpg",
   },
   openGraph: {
-    title: 'Leona Motyer - Portfolio',
-    description: 'Platform Engineer, Software Developer Portfolio',
-    type: 'website',
-    url: 'https://motyer.ca',
-    siteName: 'Leona Motyer',
-    locale: 'en_US',
+    title: "Leona Motyer - Portfolio",
+    description: "Platform Engineer, Software Developer Portfolio",
+    type: "website",
+    url: "https://motyer.ca",
+    siteName: "Leona Motyer",
+    locale: "en_US",
     images: [
       {
-        url: 'https://motyer.ca/bikeplane.jpg',
+        url: "https://motyer.ca/bikeplane.jpg",
         width: 1200,
         height: 630,
-        alt: 'Leona Motyer - Platform Engineer, Software Developer',
+        alt: "Leona Motyer - Platform Engineer, Software Developer",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Leona Motyer - Portfolio',
-    description: 'Platform Engineer, Software Developer Portfolio',
-    images: ['https://motyer.ca/bikeplane.jpg'],
+    card: "summary_large_image",
+    title: "Leona Motyer - Portfolio",
+    description: "Platform Engineer, Software Developer Portfolio",
+    images: ["https://motyer.ca/bikeplane.jpg"],
   },
   other: {
-    'og:title': 'Leona Motyer - Portfolio',
-    'og:description': 'Platform Engineer, Software Developer Portfolio',
-    'og:type': 'website',
-    'og:url': 'https://motyer.ca',
-    'og:site_name': 'Leona Motyer',
-    'og:image': 'https://motyer.ca/bikeplane.jpg',
-    'author': 'Leona Motyer',
+    "og:title": "Leona Motyer - Portfolio",
+    "og:description": "Platform Engineer, Software Developer Portfolio",
+    "og:type": "website",
+    "og:url": "https://motyer.ca",
+    "og:site_name": "Leona Motyer",
+    "og:image": "https://motyer.ca/bikeplane.jpg",
+    author: "Leona Motyer",
   },
 };
 
@@ -61,7 +61,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta property="og:title" content="Leona Motyer - Portfolio" />
-        <meta property="og:description" content="Platform Engineer, Software Developer Portfolio" />
+        <meta
+          property="og:description"
+          content="Platform Engineer, Software Developer Portfolio"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://motyer.ca" />
         <meta property="og:site_name" content="Leona Motyer" />
@@ -96,4 +99,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-} 
+}

@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaLinkedin } from 'react-icons/fa';
-import recommendationsData from '../data/recommendations.json';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
+import recommendationsData from "../data/recommendations.json";
 
 interface Recommendation {
   name: string;
@@ -13,10 +13,14 @@ interface Recommendation {
 
 export default function Recommendations() {
   const [index, setIndex] = useState(0);
-  const recommendations = recommendationsData.recommendations as Recommendation[];
+  const recommendations =
+    recommendationsData.recommendations as Recommendation[];
 
   const next = () => setIndex((prev) => (prev + 1) % recommendations.length);
-  const prev = () => setIndex((prev) => (prev - 1 + recommendations.length) % recommendations.length);
+  const prev = () =>
+    setIndex(
+      (prev) => (prev - 1 + recommendations.length) % recommendations.length
+    );
 
   return (
     <section className="py-20 px-4 max-w-2xl mx-auto">
@@ -50,18 +54,28 @@ export default function Recommendations() {
                 src={recommendations[index].avatar}
                 alt={recommendations[index].name}
                 className={
-                  (recommendations[index].avatar === '/collectivei.png' || recommendations[index].avatar === 'collectivei.png'
-                    ? 'w-16 h-16 p-4'
-                    : 'w-20 h-20') +
-                  ' rounded-full mb-4 border-4 border-amber-500 shadow-lg bg-white ' +
-                  (recommendations[index].avatar === '/collectivei.png' || recommendations[index].avatar === 'collectivei.png'
-                    ? 'object-contain'
-                    : 'object-cover object-center')
+                  (recommendations[index].avatar === "/collectivei.png" ||
+                  recommendations[index].avatar === "collectivei.png"
+                    ? "w-16 h-16 p-4"
+                    : "w-20 h-20") +
+                  " rounded-full mb-4 border-4 border-amber-500 shadow-lg bg-white " +
+                  (recommendations[index].avatar === "/collectivei.png" ||
+                  recommendations[index].avatar === "collectivei.png"
+                    ? "object-contain"
+                    : "object-cover object-center")
                 }
-                onError={(e) => (e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(recommendations[index].name))}
+                onError={(e) =>
+                  (e.currentTarget.src =
+                    "https://ui-avatars.com/api/?name=" +
+                    encodeURIComponent(recommendations[index].name))
+                }
               />
-              <h3 className="text-xl font-semibold text-white mb-1">{recommendations[index].name}</h3>
-              <p className="text-amber-400 text-sm mb-1">{recommendations[index].title}</p>
+              <h3 className="text-xl font-semibold text-white mb-1">
+                {recommendations[index].name}
+              </h3>
+              <p className="text-amber-400 text-sm mb-1">
+                {recommendations[index].title}
+              </p>
               {recommendations[index].linkedin && (
                 <a
                   href={recommendations[index].linkedin}
@@ -74,7 +88,9 @@ export default function Recommendations() {
                   <span className="sr-only">LinkedIn</span>
                 </a>
               )}
-              <p className="text-gray-300 text-center italic">"{recommendations[index].text}"</p>
+              <p className="text-gray-300 text-center italic">
+                "{recommendations[index].text}"
+              </p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -91,11 +107,11 @@ export default function Recommendations() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full ${i === index ? 'bg-amber-500' : 'bg-gray-600'} transition-colors`}
+            className={`w-3 h-3 rounded-full ${i === index ? "bg-amber-500" : "bg-gray-600"} transition-colors`}
             aria-label={`Go to recommendation ${i + 1}`}
           />
         ))}
       </div>
     </section>
   );
-} 
+}

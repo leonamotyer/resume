@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGraduationCap, FaAward, FaBook, FaLaptopCode } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaAward, FaBook, FaLaptopCode } from "react-icons/fa";
 
 const Education: React.FC = () => {
   return (
@@ -20,7 +20,9 @@ const Education: React.FC = () => {
               <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-amber-300 bg-clip-text text-transparent">
                 Software Development Diploma
               </h3>
-              <p className="text-gray-300 mt-1">Southern Alberta Institute of Technology (SAIT)</p>
+              <p className="text-gray-300 mt-1">
+                Southern Alberta Institute of Technology (SAIT)
+              </p>
             </div>
           </div>
           <div className="mt-4 md:mt-0">
@@ -29,7 +31,7 @@ const Education: React.FC = () => {
             </span>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <motion.div
             whileHover={{ scale: 1.02 }}
@@ -37,7 +39,9 @@ const Education: React.FC = () => {
           >
             <div className="flex items-center space-x-3 mb-2">
               <FaAward className="text-amber-500 text-xl" />
-              <h4 className="text-amber-500 font-semibold">Academic Excellence</h4>
+              <h4 className="text-amber-500 font-semibold">
+                Academic Excellence
+              </h4>
             </div>
             <p className="text-gray-300">Set to achieve Honour Roll</p>
           </motion.div>
@@ -50,7 +54,9 @@ const Education: React.FC = () => {
               <FaBook className="text-amber-500 text-xl" />
               <h4 className="text-amber-500 font-semibold">Program Duration</h4>
             </div>
-            <p className="text-gray-300">2-year comprehensive program in software development</p>
+            <p className="text-gray-300">
+              2-year comprehensive program in software development
+            </p>
           </motion.div>
 
           <motion.div
@@ -61,7 +67,9 @@ const Education: React.FC = () => {
               <FaLaptopCode className="text-amber-500 text-xl" />
               <h4 className="text-amber-500 font-semibold">Industry Focus</h4>
             </div>
-            <p className="text-gray-300">Practical, industry-relevant skills development</p>
+            <p className="text-gray-300">
+              Practical, industry-relevant skills development
+            </p>
           </motion.div>
         </div>
       </motion.div>
@@ -69,4 +77,4 @@ const Education: React.FC = () => {
   );
 };
 
-export default Education; 
+export default Education;

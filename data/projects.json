@@ -9,14 +9,28 @@
     {
       "title": "YYC Food Trucks - Employee & Event Management System",
       "description": "Developed a comprehensive full-stack capstone project for food truck operations management. Implemented features including employee scheduling, event coordination, shift tracking, and real-time availability monitoring. Built with modern web technologies and a focus on scalability and user experience.",
-      "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Supabase"],
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React.js",
+        "Tailwind CSS",
+        "Supabase"
+      ],
       "githubUrl": "https://github.com/yoohyunk/yyc-foodtruck-scheduler",
       "image": "/yycfoodtrucks.png"
     },
     {
       "title": "Rollin' in Dough",
       "description": "Developed a sweet e-commerce platform for a local baker. Now cookie lovers can order their fix 24/7.",
-      "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Square API", "Email.js API", "Firebase"],
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React.js",
+        "Tailwind CSS",
+        "Square API",
+        "Email.js API",
+        "Firebase"
+      ],
       "githubUrl": "https://github.com/yoohyunk/rollin-in-dough",
       "liveUrl": "https://rollin-in-dough.vercel.app/",
       "image": "/rollinindough.png"
@@ -31,9 +45,15 @@
     {
       "title": "Noize",
       "description": "Collaborated on a music streaming platform my focus was on the UI, dynamic search functionality, secure login, and the song display page with functionality. ",
-      "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS", "Supabase"],
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React.js",
+        "Tailwind CSS",
+        "Supabase"
+      ],
       "githubUrl": "https://github.com/leonamotyer/Noize",
       "image": "/noize.png"
     }
   ]
-} 
+}
