@@ -29,14 +29,19 @@ export interface SkillsRef {
 const Skills = forwardRef<SkillsRef>((_, ref) => {
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
   const skills = skillsData.skills as SkillsData;
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // If scrolling up and a skill is expanded, close it
-      if (currentScrollY < lastScrollY && expandedSkill) {
+      // Don't close expanded skill if this is a programmatic scroll
+      if (
+        !isProgrammaticScroll &&
+        currentScrollY < lastScrollY &&
+        expandedSkill
+      ) {
         setExpandedSkill(null);
       }
 
@@ -45,51 +50,44 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, expandedSkill]);
+  }, [lastScrollY, expandedSkill, isProgrammaticScroll]);
 
   useEffect(() => {
     if (expandedSkill) {
+      setIsProgrammaticScroll(true);
+
+      // Wait longer for the content to expand first
       setTimeout(() => {
         const skillElement = document.getElementById(
           `skill-${expandedSkill.toLowerCase().replace(/\s+/g, "-")}`
         );
         if (skillElement) {
-          // Calculate the current position of the element
-          const elementRect = skillElement.getBoundingClientRect();
-          const elementTop = elementRect.top + window.pageYOffset;
-
-          // Find any expanded content that might be above this element
-          let expandedContentHeight = 0;
-          const allSkillElements = document.querySelectorAll('[id^="skill-"]');
-
-          allSkillElements.forEach((el) => {
-            const skillName = el.id.replace("skill-", "").replace(/-/g, " ");
-            const skillNameNormalized = skillName.replace(/\s+/g, " ").trim();
-            const expandedSkillNormalized = expandedSkill
-              .toLowerCase()
-              .replace(/\s+/g, " ");
-
-            // If this element is above our target and has expanded content
-            if (
-              el.getBoundingClientRect().top < elementRect.top &&
-              skillNameNormalized !== expandedSkillNormalized
-            ) {
-              const expandedContent = el.nextElementSibling;
-              if (
-                expandedContent &&
-                expandedContent.classList.contains("bg-red-600/15")
-              ) {
-                expandedContentHeight += (expandedContent as HTMLElement)
-                  .offsetHeight;
-              }
-            }
+          // Use scrollIntoView with start alignment to ensure visibility
+          skillElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
           });
 
-          const yOffset = -100;
-          const y = elementTop + expandedContentHeight + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
+          // Double-check visibility after scrolling
+          setTimeout(() => {
+            const rect = skillElement.getBoundingClientRect();
+            const isVisible =
+              rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (!isVisible) {
+              // If not visible, try scrolling again with more specific positioning
+              const elementTop = rect.top + window.pageYOffset;
+              window.scrollTo({ top: elementTop - 50, behavior: "smooth" });
+            }
+
+            // Reset the programmatic scroll flag
+            setTimeout(() => {
+              setIsProgrammaticScroll(false);
+            }, 500);
+          }, 400);
         }
-      }, 100);
+      }, 300); // Increased delay to wait for content expansion
     }
   }, [expandedSkill]);
 
