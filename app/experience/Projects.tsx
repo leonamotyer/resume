@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import projectsData from "../data/projects.json";
+import projectsData from "../../data/projects.json";
 import { SkillsRef } from "./Skills";
 
 interface Project {

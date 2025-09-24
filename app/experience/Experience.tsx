@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import experienceData from "../data/experience.json";
+import experienceData from "../../data/experience.json";
 import Image from "next/image";
 
 interface ExperienceItem {

@@ -11,12 +11,13 @@ import {
   FaFileDownload,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
-import Experience from "../components/Experience";
-import Skills, { SkillsRef } from "../components/Skills";
-import Projects from "../components/Projects";
-import Education from "../components/Education";
-import Recommendations from "../components/Recommendations";
-import About from "../components/About";
+import Experience from "./experience/Experience";
+import Skills, { SkillsRef } from "./experience/Skills";
+import Projects from "./experience/Projects";
+import Education from "./education/Education";
+import Recommendations from "./recomendations/Recommendations";
+import About from "./about/About";
+import Header from "../components/Header";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -90,8 +91,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <Header />
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="hero" className="h-screen flex items-center justify-center relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -176,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+      <section id="experience" className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+      <section id="education" className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -251,7 +253,7 @@ export default function Home() {
       </motion.div>
 
       {/* Projects Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+      <section id="projects" className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -264,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto">
+      <section id="skills" className="py-20 px-4 max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -277,13 +279,17 @@ export default function Home() {
       </section>
 
       {/* Recommendations Section */}
-      <Recommendations />
+      <section id="recommendations">
+        <Recommendations />
+      </section>
 
       {/* About Section */}
-      <About />
+      <section id="about">
+        <About />
+      </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
+      <section id="contact" className="py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

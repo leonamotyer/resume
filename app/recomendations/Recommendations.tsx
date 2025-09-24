@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
-import recommendationsData from "../data/recommendations.json";
+import recommendationsData from "../../data/recommendations.json";
 
 interface Recommendation {
   name: string;

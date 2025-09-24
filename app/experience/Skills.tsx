@@ -5,7 +5,7 @@ import React, {
   useEffect,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import skillsData from "../data/skills.json";
+import skillsData from "../../data/skills.json";
 import { FaChevronDown } from "react-icons/fa";
 
 interface Skill {
