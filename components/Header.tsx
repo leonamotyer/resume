@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,22 +34,15 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
-
   const navItems = [
-    { id: "experience", label: "Experience" },
-    { id: "education", label: "Education" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "recommendations", label: "Recommendations" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/experience", label: "Experience" },
+    { href: "/education", label: "Education" },
+    { href: "/experience/projects", label: "Projects" },
+    { href: "/experience/skills", label: "Skills" },
+    { href: "/recomendations", label: "Recommendations" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -67,32 +63,40 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0"
           >
-            <button
-              onClick={() => scrollToSection("hero")}
+            <Link
+              href="/"
               className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900 hover:from-amber-400 hover:to-red-800 transition-all duration-300"
             >
               Leona Motyer
-            </button>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
+                <motion.div
+                  key={item.href}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-amber-500 px-3 py-2 text-sm font-medium transition-colors duration-300 relative group"
+                  className="relative group"
                 >
-                  {item.label}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-300"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                  />
-                </motion.button>
+                  <Link
+                    href={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 relative ${
+                      pathname === item.href
+                        ? "text-amber-500"
+                        : "text-gray-300 hover:text-amber-500"
+                    }`}
+                  >
+                    {item.label}
+                    <motion.div
+                      className={`absolute bottom-0 left-0 h-0.5 bg-amber-500 transition-all duration-300 ${
+                        pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -127,18 +131,26 @@ const Header = () => {
             >
               <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-gray-700">
                 {navItems.map((item, index) => (
-                  <motion.button
-                    key={item.id}
+                  <motion.div
+                    key={item.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-gray-300 hover:text-amber-500 px-3 py-2 text-base font-medium transition-colors duration-300 hover:bg-gray-800/50 rounded-md"
                   >
-                    {item.label}
-                  </motion.button>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-300 hover:bg-gray-800/50 rounded-md ${
+                        pathname === item.href
+                          ? "text-amber-500"
+                          : "text-gray-300 hover:text-amber-500"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

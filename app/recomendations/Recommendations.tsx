@@ -89,7 +89,7 @@ export default function Recommendations() {
                 </a>
               )}
               <p className="text-gray-300 text-center italic">
-                "{recommendations[index].text}"
+                &ldquo;{recommendations[index].text}&rdquo;
               </p>
             </motion.div>
           </AnimatePresence>
