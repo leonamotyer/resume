@@ -36,8 +36,7 @@ const Header = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/experience", label: "Experience" },
-    { href: "/education", label: "Education" },
+    { href: "/experience", label: "Experience & Education" },
     { href: "/experience/projects", label: "Projects" },
     { href: "/experience/skills", label: "Skills" },
     { href: "/recomendations", label: "Recommendations" },
@@ -57,7 +56,7 @@ const Header = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -65,7 +64,7 @@ const Header = () => {
           >
             <Link
               href="/"
-              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900 hover:from-amber-400 hover:to-red-800 transition-all duration-300"
+              className="text-lg sm:text-xl lg:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900 hover:from-amber-400 hover:to-red-800 transition-all duration-300"
             >
               Leona Motyer
             </Link>
@@ -73,7 +72,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
               {navItems.map((item) => (
                 <motion.div
                   key={item.href}
@@ -83,7 +82,7 @@ const Header = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 relative ${
+                    className={`px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium transition-colors duration-300 relative ${
                       pathname === item.href
                         ? "text-amber-500"
                         : "text-gray-300 hover:text-amber-500"
@@ -129,7 +128,7 @@ const Header = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="md:hidden mobile-menu"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-gray-700">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-gray-700 mx-2">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.href}
@@ -142,7 +141,7 @@ const Header = () => {
                     <Link
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-300 hover:bg-gray-800/50 rounded-md ${
+                      className={`block w-full text-left px-3 py-3 text-base font-medium transition-colors duration-300 hover:bg-gray-800/50 rounded-md ${
                         pathname === item.href
                           ? "text-amber-500"
                           : "text-gray-300 hover:text-amber-500"

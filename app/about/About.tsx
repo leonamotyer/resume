@@ -6,12 +6,12 @@ const About: React.FC = () => {
   const { about } = aboutData;
 
   return (
-    <section className="py-20 px-4 max-w-6xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col md:flex-row items-center gap-12"
+        className="flex flex-col md:flex-row items-center gap-8 sm:gap-12"
       >
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -34,22 +34,22 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="md:w-1/2"
         >
-          <h2 className="text-4xl font-bold mb-6 text-amber-500">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-500">
             {about.title}
           </h2>
           {about.description.map((paragraph, index) => (
-            <p key={index} className="text-lg text-gray-300 mb-4">
+            <p key={index} className="text-base sm:text-lg text-gray-300 mb-4 leading-relaxed">
               {paragraph}
             </p>
           ))}
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={about.links.github.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-amber-500 text-black rounded-lg font-semibold hover:bg-amber-400 transition-colors"
+              className="px-4 sm:px-6 py-2 bg-amber-500 text-black rounded-lg font-semibold hover:bg-amber-400 transition-colors text-center text-sm sm:text-base"
             >
               {about.links.github.text}
             </motion.a>
@@ -57,7 +57,7 @@ const About: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={about.links.email.url}
-              className="px-6 py-2 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors"
+              className="px-4 sm:px-6 py-2 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors text-center text-sm sm:text-base"
             >
               {about.links.email.text}
             </motion.a>

@@ -86,10 +86,10 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center z-10"
         >
-          <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900">
             Contact
           </h1>
-          <p className="text-2xl text-gray-300 mb-8">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 px-4">
             Let&apos;s Connect & Collaborate
           </p>
         </motion.div>
@@ -97,21 +97,21 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
+      <section className="py-16 sm:py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold mb-12 text-center text-amber-500"
+          className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-amber-500"
         >
           Get in Touch
         </motion.h2>
         <div className="max-w-md mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-300"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Name
               </label>
@@ -121,13 +121,14 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500"
+                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                placeholder="Your full name"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-300"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Email
               </label>
@@ -137,13 +138,14 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500"
+                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                placeholder="your.email@example.com"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-300"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Message
               </label>
@@ -153,7 +155,8 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500"
+                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base resize-vertical"
+                placeholder="Tell me about your project or how I can help..."
               />
             </div>
             {status.error && (
@@ -169,7 +172,7 @@ export default function ContactPage() {
               disabled={status.submitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full py-3 px-4 rounded-md bg-gradient-to-r from-amber-500 to-red-900 text-white font-medium hover:from-amber-600 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 px-4 rounded-md bg-gradient-to-r from-amber-500 to-red-900 text-white font-medium hover:from-amber-600 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base transition-all duration-300"
             >
               {status.submitting ? "Sending..." : "Send Message"}
             </motion.button>
