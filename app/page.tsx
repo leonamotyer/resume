@@ -135,19 +135,17 @@ export default function Home() {
                 <p className="text-sm sm:text-base text-gray-300">Get to know Leona Motyer</p>
               </Link>
             </motion.div>
-          </div>
-          
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="mt-8 px-4"
-          >
-            <Link 
-              href="/contact"
-              className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-amber-500 to-red-900 text-white font-semibold rounded-lg hover:from-amber-600 hover:to-red-800 transition-all duration-300 text-sm sm:text-base"
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-red-900/50 rounded-lg p-4 sm:p-6 hover:bg-red-900/70 transition-colors"
             >
-              Get in Touch
-            </Link>
-          </motion.div>
+              <Link href="/contact" className="block">
+                <h3 className="text-lg sm:text-xl font-bold text-amber-500 mb-2">Contact</h3>
+                <p className="text-sm sm:text-base text-gray-300">Get in touch & collaborate</p>
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent" />
       </section>
