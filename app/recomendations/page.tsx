@@ -6,7 +6,7 @@ import PageHero from "../../components/PageHero";
 
 export default function RecommendationsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <main className="min-h-screen text-slate-200">
       <Header />
 
       <PageHero title="Recommendations" subtitle="Professional Testimonials" />

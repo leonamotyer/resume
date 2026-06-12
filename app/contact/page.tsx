@@ -76,7 +76,7 @@ export default function ContactPage() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <main className="min-h-screen text-slate-200">
       <Header />
 
       <PageHero title="Contact" subtitle="Let's Connect & Collaborate" />
@@ -87,7 +87,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-amber-500"
+          className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-cyan-300"
         >
           Get in Touch
         </motion.h2>
@@ -95,7 +95,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="max-w-md mx-auto rounded-2xl border border-amber-500/15 bg-gradient-to-br from-red-950/50 to-gray-900/60 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8"
+          className="max-w-md mx-auto rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-950/30 to-slate-950/70 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                className="block w-full rounded-lg border border-slate-700 bg-slate-950/70 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 px-3 py-2 text-sm sm:text-base"
                 placeholder="Your full name"
               />
             </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                className="block w-full rounded-lg border border-slate-700 bg-slate-950/70 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 px-3 py-2 text-sm sm:text-base"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base resize-vertical"
+                className="block w-full rounded-lg border border-slate-700 bg-slate-950/70 text-white shadow-sm focus:border-cyan-400 focus:ring-cyan-400 px-3 py-2 text-sm sm:text-base resize-vertical"
                 placeholder="Tell me about your project or how I can help..."
               />
             </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
               disabled={status.submitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full py-3 px-4 rounded-md bg-gradient-to-r from-amber-500 to-red-900 text-white font-medium hover:from-amber-600 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base transition-all duration-300"
+              className="w-full py-3 px-4 rounded-md bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-medium hover:from-cyan-400 hover:to-violet-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base transition-all duration-300"
             >
               {status.submitting ? "Sending..." : "Send Message"}
             </motion.button>

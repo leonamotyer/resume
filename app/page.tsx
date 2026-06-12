@@ -1,5 +1,5 @@
 //Leona Motyer Resume
-//Version 1.2025
+//Version 2.2026 — "service mesh" edition
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,16 +9,9 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaFileDownload,
-  FaBriefcase,
-  FaCode,
-  FaLayerGroup,
-  FaQuoteRight,
-  FaUser,
-  FaPaperPlane,
-  FaArrowRight,
 } from "react-icons/fa";
 import Header from "../components/Header";
-import Link from "next/link";
+import TopologyMap from "../components/TopologyMap";
 
 const socialLinks = [
   {
@@ -48,45 +41,6 @@ const socialLinks = [
   },
 ];
 
-const navCards = [
-  {
-    href: "/experience",
-    icon: FaBriefcase,
-    title: "Experience & Education",
-    description: "Professional journey & academic background",
-  },
-  {
-    href: "/experience/projects",
-    icon: FaCode,
-    title: "Projects",
-    description: "Portfolio of development work",
-  },
-  {
-    href: "/experience/skills",
-    icon: FaLayerGroup,
-    title: "Skills",
-    description: "Technical expertise & technologies",
-  },
-  {
-    href: "/recomendations",
-    icon: FaQuoteRight,
-    title: "Recommendations",
-    description: "Professional testimonials",
-  },
-  {
-    href: "/about",
-    icon: FaUser,
-    title: "About",
-    description: "Get to know Leona Motyer",
-  },
-  {
-    href: "/contact",
-    icon: FaPaperPlane,
-    title: "Contact",
-    description: "Get in touch & collaborate",
-  },
-];
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
@@ -97,36 +51,47 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-900 to-black text-white">
+    <main className="relative min-h-screen overflow-hidden text-slate-200">
       <Header />
 
       {/* Ambient backdrop */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-dot-grid [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)]" />
-        <div className="animate-blob absolute -top-32 -left-20 h-96 w-96 rounded-full bg-amber-500/15 blur-3xl" />
-        <div className="animate-blob animation-delay-2000 absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-red-900/35 blur-3xl" />
-        <div className="animate-blob animation-delay-4000 absolute -bottom-32 left-1/3 h-96 w-96 rounded-full bg-amber-700/15 blur-3xl" />
+        <div className="absolute inset-0 bg-mesh-grid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+        <div className="animate-blob absolute -top-32 -left-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="animate-blob animation-delay-2000 absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-violet-600/10 blur-3xl" />
+        <div className="animate-blob animation-delay-4000 absolute -bottom-32 left-1/3 h-96 w-96 rounded-full bg-cyan-700/10 blur-3xl" />
+        {/* drifting scanline */}
+        <div className="animate-scan absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-cyan-400/[0.04] to-transparent" />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center px-4 pt-28 pb-16 sm:pt-32">
+      <section className="relative flex min-h-screen flex-col items-center px-4 pt-24 pb-10 sm:pt-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="z-10 w-full max-w-5xl text-center"
+          className="z-10 w-full max-w-6xl text-center"
         >
-          <h1 className="animate-gradient-x mb-4 bg-gradient-to-r from-amber-400 via-amber-500 to-red-800 bg-clip-text text-5xl font-bold text-transparent sm:text-6xl lg:text-7xl">
+          {/* Terminal connect line */}
+          <p className="mb-5 font-mono text-xs text-slate-500 sm:text-sm">
+            <span className="text-cyan-400">$</span> mesh connect
+            leona.motyer.ca{" "}
+            <span className="text-emerald-400">
+              ··· connection established
+            </span>
+            <span className="animate-caret ml-1 inline-block h-3.5 w-[7px] translate-y-0.5 bg-cyan-400" />
+          </p>
+
+          <h1 className="animate-gradient-x text-glow-cyan mb-3 bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-5xl font-bold text-transparent sm:text-6xl lg:text-7xl">
             Leona Motyer
           </h1>
-          <p className="mb-8 flex items-center justify-center gap-3 text-lg text-gray-300 sm:text-xl lg:text-2xl">
-            <span className="hidden h-px w-10 bg-gradient-to-r from-transparent to-amber-500/60 sm:block" />
-            Platform Engineer &amp; Software Developer
-            <span className="hidden h-px w-10 bg-gradient-to-l from-transparent to-amber-500/60 sm:block" />
+          <p className="mb-7 flex items-center justify-center gap-3 font-mono text-base text-slate-400 sm:text-lg">
+            <span className="hidden h-px w-10 bg-gradient-to-r from-transparent to-cyan-400/60 sm:block" />
+            platform-engineer · software-developer
+            <span className="hidden h-px w-10 bg-gradient-to-l from-transparent to-cyan-400/60 sm:block" />
           </p>
 
           {/* Social links */}
-          <div className="mb-12 flex justify-center gap-3 sm:gap-4">
+          <div className="mb-10 flex justify-center gap-3 sm:gap-4">
             {socialLinks.map(({ href, icon: Icon, label, external, download }) => (
               <motion.a
                 key={label}
@@ -137,7 +102,7 @@ export default function Home() {
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
                 {...(download ? { download: true } : {})}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl text-gray-300 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/50 hover:text-amber-400 hover:shadow-lg hover:shadow-amber-500/20 sm:h-14 sm:w-14 sm:text-2xl"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-slate-950/60 text-lg text-slate-300 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/60 hover:text-cyan-300 hover:shadow-lg hover:shadow-cyan-500/20 sm:h-12 sm:w-12 sm:text-xl"
                 aria-label={label}
               >
                 <Icon />
@@ -145,40 +110,31 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Navigation Cards */}
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-            {navCards.map(({ href, icon: Icon, title, description }, index) => (
-              <motion.div
-                key={href}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group relative rounded-2xl"
-              >
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-amber-500/40 to-red-900/40 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
-                <Link
-                  href={href}
-                  className="relative flex h-full flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-red-950/60 to-gray-900/60 p-5 text-left backdrop-blur-sm transition-colors duration-300 group-hover:border-amber-500/30 sm:p-6"
-                >
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-lg text-amber-500 ring-1 ring-amber-500/20 transition-colors duration-300 group-hover:bg-amber-500/20">
-                      <Icon />
-                    </span>
-                    <FaArrowRight className="text-sm text-gray-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-amber-500" />
-                  </div>
-                  <h3 className="mb-1 text-lg font-bold text-amber-500 sm:text-xl">
-                    {title}
-                  </h3>
-                  <p className="text-sm text-gray-300 sm:text-base">
-                    {description}
-                  </p>
-                </Link>
-              </motion.div>
-            ))}
+          {/* The mesh */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
+          >
+            <TopologyMap />
+          </motion.div>
+
+          {/* Status bar */}
+          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-cyan-400/10 pt-4 font-mono text-[11px] text-slate-500 sm:text-xs">
+            <span className="flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              6/6 services healthy
+            </span>
+            <span>region: yeg-1 (Edmonton)</span>
+            <span>uptime: 99.99%</span>
+            <span className="hidden text-cyan-500/70 lg:inline">
+              hover a node to inspect · click to route
+            </span>
+            <span className="text-cyan-500/70 lg:hidden">
+              tap a service to route
+            </span>
           </div>
         </motion.div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent" />
       </section>
     </main>
   );

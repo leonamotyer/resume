@@ -22,11 +22,11 @@ const Experience: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="relative pl-8 border-l-2 border-amber-500"
+          className="relative pl-8 border-l-2 border-cyan-400/60"
         >
-          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-amber-500" />
+          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.7)]" />
           <div className="mb-2">
-            <h3 className="text-xl font-bold text-amber-500">{exp.title}</h3>
+            <h3 className="text-xl font-bold text-cyan-300">{exp.title}</h3>
             <p className="text-gray-400">{exp.company}</p>
             <p className="text-sm text-gray-500">{exp.period}</p>
           </div>
@@ -53,7 +53,7 @@ const Experience: React.FC = () => {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-black/80 to-transparent z-10"
               >
-                <p className="text-sm text-amber-500 font-semibold">
+                <p className="text-sm text-cyan-300 font-semibold">
                   Log Ingestion Dashboard - Cost Optimization Results
                 </p>
               </motion.div>

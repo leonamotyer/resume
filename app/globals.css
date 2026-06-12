@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 0, 0, 0;
+  --foreground-rgb: 226, 232, 240;
+  --background-start-rgb: 2, 6, 23;
+  --background-end-rgb: 1, 2, 9;
+  --glow-cyan: 34, 211, 238;
+  --glow-violet: 167, 139, 250;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
 }
 
 ::selection {
-  background: rgba(245, 158, 11, 0.35);
+  background: rgba(34, 211, 238, 0.35);
   color: #fff;
 }
 
@@ -29,16 +31,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(17, 24, 39);
+  background: rgb(2, 6, 23);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(217, 119, 6); /* amber-600 */
+  background: rgba(34, 211, 238, 0.5);
   border-radius: 5px;
+  border: 2px solid rgb(2, 6, 23);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(180, 83, 9); /* amber-700 */
+  background: rgba(34, 211, 238, 0.8);
 }
 
 @layer utilities {
@@ -87,9 +90,72 @@ body {
   /* Faint dot grid overlay */
   .bg-dot-grid {
     background-image: radial-gradient(
-      rgba(245, 158, 11, 0.12) 1px,
+      rgba(34, 211, 238, 0.14) 1px,
       transparent 1px
     );
     background-size: 28px 28px;
+  }
+
+  /* Fine blueprint line grid */
+  .bg-mesh-grid {
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* Neon text glow */
+  .text-glow-cyan {
+    text-shadow:
+      0 0 12px rgba(34, 211, 238, 0.55),
+      0 0 40px rgba(34, 211, 238, 0.25);
+  }
+
+  /* Expanding sonar ring (used on topology nodes) */
+  .animate-sonar {
+    animation: sonar 2.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  @keyframes sonar {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(2.1);
+      opacity: 0;
+    }
+  }
+
+  /* Blinking cursor for terminal lines */
+  .animate-caret {
+    animation: caret 1.1s steps(1) infinite;
+  }
+
+  @keyframes caret {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Slow vertical drift for the scanline sweep */
+  .animate-scan {
+    animation: scan 9s linear infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
   }
 }

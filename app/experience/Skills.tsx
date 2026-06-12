@@ -118,7 +118,7 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-2xl font-bold text-amber-500"
+              className="text-2xl font-bold text-cyan-300"
             >
               {category}
             </motion.h3>
@@ -130,9 +130,9 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`relative bg-red-600/20 p-6 rounded-lg border border-red-500/30 ${
+                    className={`relative bg-cyan-950/30 p-6 rounded-lg border border-cyan-400/25 ${
                       skill.expandable
-                        ? "cursor-pointer hover:bg-red-600/30 group"
+                        ? "cursor-pointer hover:bg-cyan-900/30 group"
                         : ""
                     }`}
                     onClick={() =>
@@ -161,7 +161,7 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                             opacity: expandedSkill === skill.name ? 1 : 0.3,
                           }}
                           transition={{ duration: 0.2 }}
-                          className="text-amber-500/30 group-hover:text-amber-500/50"
+                          className="text-cyan-400/30 group-hover:text-cyan-400/60"
                         >
                           <FaChevronDown className="w-3 h-3" />
                         </motion.div>
@@ -175,9 +175,9 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-4 bg-red-600/15 rounded-lg p-6 border border-red-500/20"
+                        className="mt-4 bg-slate-900/60 rounded-lg p-6 border border-cyan-400/15"
                       >
-                        <h4 className="text-amber-400 font-medium mb-4">
+                        <h4 className="text-cyan-200 font-medium mb-4">
                           {skill.details.title}
                         </h4>
                         <ul className="space-y-2 text-gray-300">
@@ -189,7 +189,7 @@ const Skills = forwardRef<SkillsRef>((_, ref) => {
                               transition={{ delay: i * 0.05 }}
                               className="flex items-center gap-2"
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-amber-500/50" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60" />
                               {item}
                             </motion.li>
                           ))}

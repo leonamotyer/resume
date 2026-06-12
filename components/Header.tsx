@@ -59,7 +59,7 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMenuOpen
-          ? "bg-gray-950/80 backdrop-blur-xl shadow-lg shadow-black/40 border-b border-amber-500/10"
+          ? "bg-slate-950/80 backdrop-blur-xl shadow-lg shadow-black/40 border-b border-cyan-400/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -72,10 +72,22 @@ const Header = () => {
               className="group flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-red-900 font-bold text-sm text-white shadow-lg shadow-amber-500/20">
-                LM
+              <span className="relative flex h-8 w-8 items-center justify-center font-mono font-bold text-xs text-cyan-200">
+                <svg
+                  viewBox="0 0 32 32"
+                  className="absolute inset-0 h-full w-full drop-shadow-[0_0_6px_rgba(34,211,238,0.5)]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16 2 L28.12 9 L28.12 23 L16 30 L3.88 23 L3.88 9 Z"
+                    fill="rgba(8,47,73,0.7)"
+                    stroke="rgba(34,211,238,0.8)"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+                <span className="relative">LM</span>
               </span>
-              <span className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-amber-500 to-red-800 group-hover:from-amber-300 group-hover:to-red-700 transition-all duration-300 whitespace-nowrap">
+              <span className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 group-hover:from-cyan-200 group-hover:to-violet-300 transition-all duration-300 whitespace-nowrap">
                 Leona Motyer
               </span>
             </Link>
@@ -91,15 +103,15 @@ const Header = () => {
                   href={item.href}
                   className={`relative whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-300 ${
                     isActive
-                      ? "text-amber-400"
-                      : "text-gray-300 hover:text-amber-400"
+                      ? "text-cyan-300"
+                      : "text-slate-300 hover:text-cyan-300"
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                      className="absolute inset-0 rounded-full bg-amber-500/10 ring-1 ring-amber-500/30"
+                      className="absolute inset-0 rounded-full bg-cyan-400/10 ring-1 ring-cyan-400/30"
                     />
                   )}
                   <span className="relative z-10">{item.label}</span>
@@ -114,7 +126,7 @@ const Header = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-amber-400 transition-colors duration-300"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/15 bg-white/5 text-slate-300 hover:text-cyan-300 transition-colors duration-300"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -137,7 +149,7 @@ const Header = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="lg:hidden mobile-menu overflow-hidden"
             >
-              <div className="mb-4 mt-2 space-y-1 rounded-2xl border border-amber-500/10 bg-gray-900/95 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl">
+              <div className="mb-4 mt-2 space-y-1 rounded-2xl border border-cyan-400/15 bg-slate-950/95 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl">
                 {navItems.map((item, index) => {
                   const isActive = pathname === item.href;
                   return (
@@ -152,13 +164,13 @@ const Header = () => {
                         onClick={() => setIsMenuOpen(false)}
                         className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors duration-200 ${
                           isActive
-                            ? "bg-amber-500/10 text-amber-400 ring-1 ring-inset ring-amber-500/30"
-                            : "text-gray-300 hover:bg-white/5 hover:text-amber-400"
+                            ? "bg-cyan-400/10 text-cyan-300 ring-1 ring-inset ring-cyan-400/30"
+                            : "text-slate-300 hover:bg-white/5 hover:text-cyan-300"
                         }`}
                       >
                         {item.label}
                         {isActive && (
-                          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                         )}
                       </Link>
                     </motion.div>

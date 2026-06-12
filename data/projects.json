@@ -1,6 +1,28 @@
 {
   "projects": [
     {
+      "title": "Personal Resume Website – motyer.ca",
+      "description": "Designed, built, and deployed this portfolio website to showcase my experience, projects, and skills. Developed through multiple design iterations with continuous UI/UX improvements — pictured is the first version of the site. Features smooth animations, interactive skill exploration, a contact form, and a fully responsive dark-themed design.",
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Email.js API"
+      ],
+      "githubUrl": "https://github.com/leonamotyer/resume",
+      "liveUrl": "https://motyer.ca",
+      "image": "/v1resume.png"
+    },
+    {
+      "title": "Recipes – Personal Recipe Collection Website",
+      "description": "Designed and developed a personal recipe management web application to organize and browse a collection of recipes gathered over the years. Built with Next.js and TypeScript featuring recipe browsing, categorized navigation, and a fully responsive modern UI styled with Tailwind CSS.",
+      "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS"],
+      "githubUrl": "https://github.com/leonamotyer/Recipies",
+      "image": "/recipies.png"
+    },
+    {
       "title": "Self-Hosted Media Server – Automated DVD Archival & Streaming",
       "description": "Engineered a comprehensive self-hosted media server solution using headless Ubuntu deployment. Implemented automated DVD archival workflows with Docker containerization, featuring intelligent metadata extraction, file organization, and streaming capabilities. Developed custom CLI tools for streamlined media ingestion and management.",
       "technologies": ["Ubuntu", "Docker", "Bash", "CLI", "Plex"],

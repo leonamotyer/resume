@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 
 declare global {
@@ -9,7 +9,11 @@ declare global {
   }
 }
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://motyer.ca"),
@@ -70,7 +74,9 @@ export default function RootLayout({
         <meta property="og:site_name" content="Leona Motyer" />
         <meta property="og:image" content="https://motyer.ca/bikeplane.jpg" />
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}
+      >
         {children}
         <Script id="tracking-script" strategy="afterInteractive">
           {`

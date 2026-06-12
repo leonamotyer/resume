@@ -9,7 +9,7 @@ interface Project {
   description: string;
   technologies: string[];
   githubUrl: string;
-  image: string;
+  image?: string;
   liveUrl?: string;
 }
 
@@ -34,7 +34,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="bg-red-900/50 rounded-lg overflow-hidden hover:bg-red-900/70 transition-colors duration-300 shadow-lg hover:shadow-xl"
+          className="bg-slate-900/70 border border-cyan-400/15 rounded-lg overflow-hidden hover:border-cyan-400/40 hover:bg-cyan-950/30 transition-colors duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/10"
         >
           {project.image && (
             <img
@@ -49,7 +49,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
             />
           )}
           <div className="p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-bold text-amber-500 mb-2">
+            <h3 className="text-lg sm:text-xl font-bold text-cyan-300 mb-2">
               {project.title}
             </h3>
             <p className="text-sm sm:text-base text-gray-300 mb-4 leading-relaxed">{project.description}</p>
@@ -60,7 +60,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
                   onClick={() => handleTechnologyClick(tech)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-amber-500/20 text-amber-300 rounded-full hover:bg-amber-500/30 transition-colors cursor-pointer"
+                  className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-mono bg-cyan-400/10 text-cyan-200 ring-1 ring-cyan-400/20 rounded-full hover:bg-cyan-400/20 transition-colors cursor-pointer"
                 >
                   {tech}
                 </motion.button>
@@ -72,7 +72,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-500 transition-colors p-1"
+                  className="text-gray-400 hover:text-cyan-300 transition-colors p-1"
                   aria-label={`View ${project.title} on GitHub`}
                 >
                   <FaGithub className="text-lg sm:text-xl" />
@@ -83,7 +83,7 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-amber-500 transition-colors p-1"
+                  className="text-gray-400 hover:text-cyan-300 transition-colors p-1"
                   aria-label={`View ${project.title} live demo`}
                 >
                   <FaExternalLinkAlt className="text-lg sm:text-xl" />

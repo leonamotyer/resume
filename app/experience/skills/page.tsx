@@ -9,7 +9,7 @@ export default function SkillsPage() {
   const skillsRef = useRef<SkillsRef>(null);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <main className="min-h-screen text-slate-200">
       <Header />
 
       <PageHero title="Skills" subtitle="Technical Expertise & Technologies" />

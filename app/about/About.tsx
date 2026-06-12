@@ -20,7 +20,7 @@ const About: React.FC = () => {
           className="md:w-1/2"
         >
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-red-900 rounded-lg blur opacity-25"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-violet-500 rounded-lg blur opacity-25"></div>
             <img
               src={about.image}
               alt={about.imageAlt}
@@ -34,7 +34,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="md:w-1/2"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-amber-500">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-cyan-300">
             {about.title}
           </h2>
           {about.description.map((paragraph, index) => (
@@ -49,7 +49,7 @@ const About: React.FC = () => {
               href={about.links.github.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 sm:px-6 py-2 bg-amber-500 text-black rounded-lg font-semibold hover:bg-amber-400 transition-colors text-center text-sm sm:text-base"
+              className="px-4 sm:px-6 py-2 bg-cyan-400 text-slate-950 rounded-lg font-semibold hover:bg-cyan-300 transition-colors text-center text-sm sm:text-base"
             >
               {about.links.github.text}
             </motion.a>
@@ -57,7 +57,7 @@ const About: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={about.links.email.url}
-              className="px-4 sm:px-6 py-2 border border-amber-500 text-amber-500 rounded-lg font-semibold hover:bg-amber-500/10 transition-colors text-center text-sm sm:text-base"
+              className="px-4 sm:px-6 py-2 border border-cyan-400 text-cyan-300 rounded-lg font-semibold hover:bg-cyan-400/10 transition-colors text-center text-sm sm:text-base"
             >
               {about.links.email.text}
             </motion.a>

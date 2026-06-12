@@ -27,7 +27,7 @@ export default function Recommendations() {
       <div className="relative flex flex-col items-center px-10 sm:px-12">
         <button
           onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/80 hover:bg-amber-500 border border-white/10 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-cyan-500 border border-cyan-400/20 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
           aria-label="Previous"
         >
           &#8592;
@@ -40,7 +40,7 @@ export default function Recommendations() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 border border-amber-500/15 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col items-center max-w-md w-full min-h-[340px]"
+              className="bg-gradient-to-br from-slate-900 to-slate-950 border border-cyan-400/20 rounded-2xl shadow-2xl shadow-cyan-500/5 p-6 sm:p-8 flex flex-col items-center max-w-md w-full min-h-[340px]"
             >
               <img
                 src={recommendations[index].avatar}
@@ -50,7 +50,7 @@ export default function Recommendations() {
                   recommendations[index].avatar === "collectivei.png"
                     ? "w-16 h-16 p-4"
                     : "w-20 h-20") +
-                  " rounded-full mb-4 border-4 border-amber-500 shadow-lg bg-white " +
+                  " rounded-full mb-4 border-4 border-cyan-400 shadow-lg bg-white " +
                   (recommendations[index].avatar === "/collectivei.png" ||
                   recommendations[index].avatar === "collectivei.png"
                     ? "object-contain"
@@ -65,7 +65,7 @@ export default function Recommendations() {
               <h3 className="text-xl font-semibold text-white mb-1">
                 {recommendations[index].name}
               </h3>
-              <p className="text-amber-400 text-sm mb-1">
+              <p className="text-cyan-300 text-sm mb-1">
                 {recommendations[index].title}
               </p>
               {recommendations[index].linkedin && (
@@ -73,7 +73,7 @@ export default function Recommendations() {
                   href={recommendations[index].linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-3 text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  className="mb-3 text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2"
                   aria-label={`View ${recommendations[index].name}'s LinkedIn`}
                 >
                   <FaLinkedin className="text-2xl" />
@@ -88,7 +88,7 @@ export default function Recommendations() {
         </div>
         <button
           onClick={next}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/80 hover:bg-amber-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-cyan-500 border border-cyan-400/20 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
           aria-label="Next"
         >
           &#8594;
@@ -99,7 +99,7 @@ export default function Recommendations() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full ${i === index ? "bg-amber-500" : "bg-gray-600"} transition-colors`}
+            className={`w-3 h-3 rounded-full ${i === index ? "bg-cyan-400" : "bg-slate-600"} transition-colors`}
             aria-label={`Go to recommendation ${i + 1}`}
           />
         ))}
