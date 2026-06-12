@@ -1,9 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import aboutData from "../../data/about.json";
 
 const About: React.FC = () => {
   const { about } = aboutData;
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [frontIndex, setFrontIndex] = useState(0);
+
+  useEffect(() => {
+    setFrontIndex(Math.floor(Math.random() * about.images.length));
+  }, [about.images.length]);
+
+  const backIndex = 1 - frontIndex;
 
   return (
     <section className="py-16 sm:py-20 px-4 max-w-6xl mx-auto">
@@ -21,11 +31,47 @@ const About: React.FC = () => {
         >
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-violet-500 rounded-lg blur opacity-25"></div>
-            <img
-              src={about.image}
-              alt={about.imageAlt}
-              className="relative rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
-            />
+            <button
+              type="button"
+              onClick={() => setIsFlipped((flipped) => !flipped)}
+              className="relative block w-full rounded-lg shadow-2xl cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              aria-label="Flip photo between motorcycle and snowboarding"
+              title="Click to flip"
+              style={{ perspective: "1000px" }}
+            >
+              <motion.div
+                className="relative w-full"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 120,
+                  damping: 14,
+                }}
+              >
+                <div style={{ backfaceVisibility: "hidden" }}>
+                  <img
+                    src={about.images[frontIndex].src}
+                    alt={about.images[frontIndex].alt}
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <img
+                    src={about.images[backIndex].src}
+                    alt={about.images[backIndex].alt}
+                    className="h-full w-full rounded-lg object-cover"
+                  />
+                </div>
+              </motion.div>
+            </button>
           </div>
         </motion.div>
         <motion.div
