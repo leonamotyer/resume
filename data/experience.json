@@ -1,9 +1,20 @@
 {
   "experiences": [
     {
+      "title": "Software Engineer",
+      "company": "Packsize",
+      "period": "2025 - Present",
+      "description": [
+        "Member of the Identity and Access Management team, building and maintaining systems that govern authentication, authorization, and user provisioning across Packsize platforms.",
+        "Develop and extend IAM services and integrations, including SSO, role-based access control, and identity lifecycle workflows.",
+        "Partner with security and engineering teams to implement access policies, audit controls, and secure identity standards across internal applications.",
+        "Contribute to the design and delivery of scalable, maintainable software solutions that support enterprise identity requirements."
+      ]
+    },
+    {
       "title": "Platform Engineer",
       "company": "Collective i",
-      "period": "2024 - Present",
+      "period": "2024 - 2025",
       "description": [
         "Slashed observability costs by cutting Datadog log ingestion expenses by over 100% of my own salary in my first month, through retention policy tuning, exclusion filters, and fine-grained control over high-volume sources.",
         "Built advanced Datadog dashboards with custom widgets, monitors, and composite alerts tailored to engineering and business KPIs — improving incident response and reducing alert fatigue.",

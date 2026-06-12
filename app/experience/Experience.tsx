@@ -35,7 +35,7 @@ const Experience: React.FC = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
-          {exp.title === "Platform Engineer" && (
+          {exp.company === "Collective i" && (
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: 45 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
