@@ -23,19 +23,11 @@ export default function Recommendations() {
     );
 
   return (
-    <section className="py-20 px-4 max-w-2xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-bold mb-12 text-center text-amber-500"
-      >
-        Recommendations
-      </motion.h2>
-      <div className="relative flex flex-col items-center">
+    <section className="py-12 sm:py-16 px-4 max-w-2xl mx-auto">
+      <div className="relative flex flex-col items-center px-10 sm:px-12">
         <button
           onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/80 hover:bg-amber-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/80 hover:bg-amber-500 border border-white/10 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg z-10 transition-colors"
           aria-label="Previous"
         >
           &#8592;
@@ -48,7 +40,7 @@ export default function Recommendations() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl p-8 flex flex-col items-center max-w-md w-full min-h-[340px]"
+              className="bg-gradient-to-br from-gray-800 to-gray-900 border border-amber-500/15 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col items-center max-w-md w-full min-h-[340px]"
             >
               <img
                 src={recommendations[index].avatar}

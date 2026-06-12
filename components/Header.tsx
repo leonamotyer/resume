@@ -6,18 +6,28 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/experience", label: "Experience & Education" },
+  { href: "/experience/projects", label: "Projects" },
+  { href: "/experience/skills", label: "Skills" },
+  { href: "/recomendations", label: "Recommendations" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -34,15 +44,13 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/experience", label: "Experience & Education" },
-    { href: "/experience/projects", label: "Projects" },
-    { href: "/experience/skills", label: "Skills" },
-    { href: "/recomendations", label: "Recommendations" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   return (
     <motion.header
@@ -50,69 +58,70 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-gray-900/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isScrolled || isMenuOpen
+          ? "bg-gray-950/80 backdrop-blur-xl shadow-lg shadow-black/40 border-b border-amber-500/10"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
-          >
+          <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
             <Link
               href="/"
-              className="text-lg sm:text-xl lg:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900 hover:from-amber-400 hover:to-red-800 transition-all duration-300"
+              className="group flex items-center gap-2"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Leona Motyer
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-red-900 font-bold text-sm text-white shadow-lg shadow-amber-500/20">
+                LM
+              </span>
+              <span className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-amber-500 to-red-800 group-hover:from-amber-300 group-hover:to-red-700 transition-all duration-300 whitespace-nowrap">
+                Leona Motyer
+              </span>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
-              {navItems.map((item) => (
-                <motion.div
+          <div className="hidden lg:flex items-center gap-1 rounded-full border border-white/5 bg-white/[0.03] px-2 py-1 backdrop-blur-md">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
                   key={item.href}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative group"
+                  href={item.href}
+                  className={`relative whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-300 ${
+                    isActive
+                      ? "text-amber-400"
+                      : "text-gray-300 hover:text-amber-400"
+                  }`}
                 >
-                  <Link
-                    href={item.href}
-                    className={`px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium transition-colors duration-300 relative ${
-                      pathname === item.href
-                        ? "text-amber-500"
-                        : "text-gray-300 hover:text-amber-500"
-                    }`}
-                  >
-                    {item.label}
-                    <motion.div
-                      className={`absolute bottom-0 left-0 h-0.5 bg-amber-500 transition-all duration-300 ${
-                        pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className="absolute inset-0 rounded-full bg-amber-500/10 ring-1 ring-amber-500/30"
                     />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+                  )}
+                  <span className="relative z-10">{item.label}</span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden mobile-menu">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-amber-500 p-2 transition-colors duration-300"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-amber-400 transition-colors duration-300"
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <FaTimes className="h-6 w-6" />
+                <FaTimes className="h-5 w-5" />
               ) : (
-                <FaBars className="h-6 w-6" />
+                <FaBars className="h-5 w-5" />
               )}
             </motion.button>
           </div>
@@ -126,31 +135,35 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden mobile-menu"
+              className="lg:hidden mobile-menu overflow-hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-gray-700 mx-2">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`block w-full text-left px-3 py-3 text-base font-medium transition-colors duration-300 hover:bg-gray-800/50 rounded-md ${
-                        pathname === item.href
-                          ? "text-amber-500"
-                          : "text-gray-300 hover:text-amber-500"
-                      }`}
+              <div className="mb-4 mt-2 space-y-1 rounded-2xl border border-amber-500/10 bg-gray-900/95 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl">
+                {navItems.map((item, index) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
                     >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                          isActive
+                            ? "bg-amber-500/10 text-amber-400 ring-1 ring-inset ring-amber-500/30"
+                            : "text-gray-300 hover:bg-white/5 hover:text-amber-400"
+                        }`}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           )}

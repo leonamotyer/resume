@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Header from "../../components/Header";
+import PageHero from "../../components/PageHero";
 
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
@@ -77,27 +78,11 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center relative overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center z-10"
-        >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-900">
-            Contact
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 px-4">
-            Let&apos;s Connect & Collaborate
-          </p>
-        </motion.div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent" />
-      </section>
+
+      <PageHero title="Contact" subtitle="Let's Connect & Collaborate" />
 
       {/* Contact Section */}
-      <section className="py-16 sm:py-20 px-4 max-w-6xl mx-auto bg-red-900/50">
+      <section className="mx-auto max-w-6xl px-4 py-12 pb-24 sm:py-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +91,12 @@ export default function ContactPage() {
         >
           Get in Touch
         </motion.h2>
-        <div className="max-w-md mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="max-w-md mx-auto rounded-2xl border border-amber-500/15 bg-gradient-to-br from-red-950/50 to-gray-900/60 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8"
+        >
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div>
               <label
@@ -121,7 +111,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
                 placeholder="Your full name"
               />
             </div>
@@ -138,7 +128,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
+                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -155,7 +145,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base resize-vertical"
+                className="block w-full rounded-lg border border-gray-700 bg-gray-900/70 text-white shadow-sm focus:border-amber-500 focus:ring-amber-500 px-3 py-2 text-sm sm:text-base resize-vertical"
                 placeholder="Tell me about your project or how I can help..."
               />
             </div>
@@ -177,7 +167,7 @@ export default function ContactPage() {
               {status.submitting ? "Sending..." : "Send Message"}
             </motion.button>
           </form>
-        </div>
+        </motion.div>
       </section>
     </main>
   );

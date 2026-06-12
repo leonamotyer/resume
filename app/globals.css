@@ -18,6 +18,11 @@ body {
   min-height: 100vh;
 }
 
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: #fff;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -34,4 +39,57 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(180, 83, 9); /* amber-700 */
+}
+
+@layer utilities {
+  /* Slowly shifting gradient for headline text */
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 6s ease infinite;
+  }
+
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Floating ambient blobs */
+  .animate-blob {
+    animation: blob 14s ease-in-out infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(40px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-30px, 30px) scale(0.92);
+    }
+  }
+
+  /* Faint dot grid overlay */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      rgba(245, 158, 11, 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+  }
 }

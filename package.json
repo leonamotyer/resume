@@ -6,25 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint app components --ext .ts,.tsx"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.10"
+    }
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "autoprefixer": "^10.4.17",
-    "framer-motion": "^11.0.3",
-    "next": "14.1.0",
+    "framer-motion": "^12.40.0",
+    "next": "^16.2.9",
     "postcss": "^8.4.35",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-icons": "^5.0.1",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.16",
-    "@types/react": "^18.2.52",
-    "@types/react-dom": "^18.2.18",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "14.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.19",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
