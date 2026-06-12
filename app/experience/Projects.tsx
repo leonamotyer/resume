@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import projectsData from "../../data/projects.json";
+import ImageCarousel from "../../components/ImageCarousel";
 import { SkillsRef } from "./Skills";
 
 interface Project {
@@ -10,6 +11,7 @@ interface Project {
   technologies: string[];
   githubUrl: string;
   image?: string;
+  images?: string[];
   liveUrl?: string;
 }
 
@@ -36,17 +38,24 @@ const Projects: React.FC<ProjectsProps> = ({ skillsRef }) => {
           transition={{ duration: 0.5, delay: index * 0.1 }}
           className="bg-slate-900/70 border border-cyan-400/15 rounded-lg overflow-hidden hover:border-cyan-400/40 hover:bg-cyan-950/30 transition-colors duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/10"
         >
-          {project.image && (
-            <img
-              src={project.image}
+          {project.images ? (
+            <ImageCarousel
+              images={project.images}
               alt={project.title}
-              className={
-                "w-full h-40 sm:h-48 bg-black " +
-                (project.title === "Noize"
-                  ? "object-contain p-4"
-                  : "object-cover object-center")
-              }
             />
+          ) : (
+            project.image && (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={
+                  "w-full h-40 sm:h-48 bg-black " +
+                  (project.title === "Noize"
+                    ? "object-contain p-4"
+                    : "object-cover object-center")
+                }
+              />
+            )
           )}
           <div className="p-4 sm:p-6">
             <h3 className="text-lg sm:text-xl font-bold text-cyan-300 mb-2">

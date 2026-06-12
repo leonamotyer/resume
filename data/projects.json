@@ -20,7 +20,8 @@
       "description": "Designed and developed a personal recipe management web application to organize and browse a collection of recipes gathered over the years. Built with Next.js and TypeScript featuring recipe browsing, categorized navigation, and a fully responsive modern UI styled with Tailwind CSS.",
       "technologies": ["TypeScript", "Next.js", "React.js", "Tailwind CSS"],
       "githubUrl": "https://github.com/leonamotyer/Recipies",
-      "image": "/recipies.png"
+      "liveUrl": "https://leonascookbook.vercel.app",
+      "images": ["/recipiesV2.png", "/recipies.png"]
     },
     {
       "title": "Self-Hosted Media Server – Automated DVD Archival & Streaming",
