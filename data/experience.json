@@ -5,10 +5,12 @@
       "company": "Packsize",
       "period": "2025 - Present",
       "description": [
-        "Member of the Identity and Access Management team, building and maintaining systems that govern authentication, authorization, and user provisioning across Packsize platforms.",
-        "Develop and extend IAM services and integrations, including SSO, role-based access control, and identity lifecycle workflows.",
-        "Partner with security and engineering teams to implement access policies, audit controls, and secure identity standards across internal applications.",
-        "Contribute to the design and delivery of scalable, maintainable software solutions that support enterprise identity requirements."
+        "Build and maintain C# services for identity, authorization, and user provisioning.",
+        "Reworked an API Gateway request path that passed through four layers before making an HTTP call. The new ApiService pattern makes routes shorter, easier to test, and easier to trace; it also limits SSRF risk by keeping service names typed and endpoints in configuration.",
+        "Moved Identity CRUD operations from tenant IDs to company IDs behind a feature flag, allowing the architecture to change without disrupting existing consumers.",
+        "Helped restore our email sender reputation, then built a privacy-conscious Grafana dashboard for bounce, spam, and failure rates so the problem would not become invisible again.",
+        "Set practical alert thresholds in Terraform, including removing noise that could otherwise wake someone at 3 a.m.",
+        "Write technical documentation for migrations and share useful tools with the team, including a live demo of a Lucidchart MCP workflow."
       ]
     },
     {

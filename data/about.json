@@ -12,9 +12,9 @@
       }
     ],
     "description": [
-      "I'm Leona, a software and platform engineer with a sharp focus on building scalable, secure, and efficient infrastructure. My background blends hands-on experience in cloud platforms like AWS and Azure with a strong foundation in automation, observability, and system design. I'm particularly drawn to the intersection of performance, reliability, and developer experience — where thoughtful tooling and well-architected systems make the difference between chaos and clarity.",
-      "I take pride in solving hard problems with precision, whether it's optimizing cloud costs, improving CI/CD workflows, locking down access control, building accessable UI, or building out monitoring that looks pretty. Outside of tech, I rebuild cars, snowboard through the winters, and motorcycle through the summers. I also maintain a personal headless Ubuntu server environment where I've implemented a fully automated media archival pipeline using Docker and a custom CLI. This project reflects my hands-on experience with Linux system administration, scripting for operational efficiency, and deploying structured services in a self-hosted environment—skills I'm eager to expand in a professional cloud operations role."
-    ],
+      "My path into software started with an infrastructure internship at Collective[i], an AI startup. Working close to cloud systems taught me that software doesn't end when the code ships — it still has to be secure, observable, affordable, and understandable when something breaks.",
+      "Now I'm a software engineer at Packsize, working mainly in C# and React. I like untangling hard problems, understanding how the pieces actually fit together, and leaving code easier to reason about than I found it. My infrastructure background still shapes how I build: I think about how something will run and fail — not just for my team, but across the product.",
+      "Outside work, I rebuild cars, snowboard in the winter, and ride motorcycles in the summer. I've always liked working with my hands as much as my head."    ],
     "links": {
       "github": {
         "url": "https://github.com/leonamotyer",
