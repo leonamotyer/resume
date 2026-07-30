@@ -87,7 +87,7 @@ const Header = () => {
                 </svg>
                 <span className="relative">LM</span>
               </span>
-              <span className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 group-hover:from-cyan-200 group-hover:to-violet-300 transition-all duration-300 whitespace-nowrap">
+              <span className="text-lg sm:text-xl font-bold text-sky-400 transition-all duration-300 whitespace-nowrap">
                 Leona Motyer
               </span>
             </Link>
