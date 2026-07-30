@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://motyer.ca/bikeplane.jpg",
+        url: "https://motyer.ca/bike.jpg",
         width: 1200,
         height: 630,
         alt: "Leona Motyer - Platform Engineer, Software Developer",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Leona Motyer - Portfolio",
     description: "Platform Engineer, Software Developer Portfolio",
-    images: ["https://motyer.ca/bikeplane.jpg"],
+    images: ["https://motyer.ca/bike.jpg"],
   },
   other: {
     "og:title": "Leona Motyer - Portfolio",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "og:type": "website",
     "og:url": "https://motyer.ca",
     "og:site_name": "Leona Motyer",
-    "og:image": "https://motyer.ca/bikeplane.jpg",
+    "og:image": "https://motyer.ca/bike.jpg",
     author: "Leona Motyer",
   },
 };
@@ -68,7 +68,7 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://motyer.ca" />
         <meta property="og:site_name" content="Leona Motyer" />
-        <meta property="og:image" content="https://motyer.ca/bikeplane.jpg" />
+        <meta property="og:image" content="https://motyer.ca/bike.jpg" />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}
